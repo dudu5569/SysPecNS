@@ -107,7 +107,7 @@ namespace SysPecNSDesk
 
         private void TxtNumero2_TextChanged(object sender, EventArgs e)
         {
-            if(TxtNumero2.Text.Length > 0)
+            if (TxtNumero2.Text.Length > 0)
             {
                 BtnConfirma.Enabled = true;
             }
@@ -115,6 +115,16 @@ namespace SysPecNSDesk
             {
                 BtnConfirma.Enabled = false;
             }
+        }
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Nivel nivel = new Nivel(textBox1.Text, textBox2.Text);
+            nivel.Inserir();
+            MessageBox.Show("Nível gravado com succeso");
+            button1.Enabled = false;
+
         }
     }
 }
