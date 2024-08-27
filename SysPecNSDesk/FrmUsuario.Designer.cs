@@ -48,20 +48,23 @@
             chkAtivo = new CheckBox();
             label6 = new Label();
             txtConfSenha = new TextBox();
+            btnEditar = new Button();
+            btnDeletar = new Button();
+            txtBusca = new TextBox();
             ((System.ComponentModel.ISupportInitialize)DgvUsuarios).BeginInit();
             SuspendLayout();
             // 
             // DgvUsuarios
             // 
             DgvUsuarios.AllowUserToAddRows = false;
-            DgvUsuarios.AllowUserToDeleteRows = false;
             DgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { clnId, clnNome, clnEmail, clnNivel, clnAtivo });
-            DgvUsuarios.Location = new Point(131, 273);
+            DgvUsuarios.Location = new Point(130, 288);
             DgvUsuarios.Name = "DgvUsuarios";
             DgvUsuarios.ReadOnly = true;
             DgvUsuarios.RowHeadersVisible = false;
             DgvUsuarios.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            DgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DgvUsuarios.Size = new Size(500, 150);
             DgvUsuarios.TabIndex = 0;
             DgvUsuarios.CellContentClick += DgvUsuarios_CellContentClick;
@@ -108,7 +111,7 @@
             // 
             // btnInserir
             // 
-            btnInserir.Location = new Point(437, 240);
+            btnInserir.Location = new Point(370, 231);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(75, 23);
             btnInserir.TabIndex = 1;
@@ -119,7 +122,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(131, 76);
+            label1.Location = new Point(130, 64);
             label1.Name = "label1";
             label1.Size = new Size(18, 15);
             label1.TabIndex = 2;
@@ -128,7 +131,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(190, 76);
+            label2.Location = new Point(189, 64);
             label2.Name = "label2";
             label2.Size = new Size(40, 15);
             label2.TabIndex = 3;
@@ -137,7 +140,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(131, 132);
+            label3.Location = new Point(130, 120);
             label3.Name = "label3";
             label3.Size = new Size(36, 15);
             label3.TabIndex = 4;
@@ -146,7 +149,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(131, 182);
+            label4.Location = new Point(130, 170);
             label4.Name = "label4";
             label4.Size = new Size(34, 15);
             label4.TabIndex = 5;
@@ -156,7 +159,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(131, 225);
+            label5.Location = new Point(130, 213);
             label5.Name = "label5";
             label5.Size = new Size(39, 15);
             label5.TabIndex = 6;
@@ -164,7 +167,7 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(131, 96);
+            txtId.Location = new Point(130, 84);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
             txtId.Size = new Size(37, 23);
@@ -172,21 +175,21 @@
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(190, 96);
+            txtNome.Location = new Point(189, 84);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(267, 23);
             txtNome.TabIndex = 8;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(131, 150);
+            txtEmail.Location = new Point(130, 138);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(326, 23);
             txtEmail.TabIndex = 9;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(131, 244);
+            txtSenha.Location = new Point(130, 232);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(100, 23);
             txtSenha.TabIndex = 11;
@@ -196,7 +199,7 @@
             // 
             cmbNIvel.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbNIvel.FormattingEnabled = true;
-            cmbNIvel.Location = new Point(131, 200);
+            cmbNIvel.Location = new Point(130, 188);
             cmbNIvel.Name = "cmbNIvel";
             cmbNIvel.Size = new Size(121, 23);
             cmbNIvel.TabIndex = 12;
@@ -204,7 +207,7 @@
             // chkAtivo
             // 
             chkAtivo.AutoSize = true;
-            chkAtivo.Location = new Point(367, 244);
+            chkAtivo.Location = new Point(272, 190);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
             chkAtivo.TabIndex = 13;
@@ -215,7 +218,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(248, 226);
+            label6.Location = new Point(247, 214);
             label6.Name = "label6";
             label6.Size = new Size(96, 15);
             label6.TabIndex = 14;
@@ -223,17 +226,46 @@
             // 
             // txtConfSenha
             // 
-            txtConfSenha.Location = new Point(248, 244);
+            txtConfSenha.Location = new Point(247, 232);
             txtConfSenha.Name = "txtConfSenha";
             txtConfSenha.Size = new Size(100, 23);
             txtConfSenha.TabIndex = 15;
             txtConfSenha.UseSystemPasswordChar = true;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(464, 231);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(75, 23);
+            btnEditar.TabIndex = 16;
+            btnEditar.Text = "&Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnDeletar
+            // 
+            btnDeletar.Location = new Point(555, 232);
+            btnDeletar.Name = "btnDeletar";
+            btnDeletar.Size = new Size(75, 23);
+            btnDeletar.TabIndex = 17;
+            btnDeletar.Text = "&Deletar";
+            btnDeletar.UseVisualStyleBackColor = true;
+            // 
+            // txtBusca
+            // 
+            txtBusca.Location = new Point(130, 271);
+            txtBusca.Name = "txtBusca";
+            txtBusca.Size = new Size(500, 23);
+            txtBusca.TabIndex = 18;
+            txtBusca.TextChanged += txtBusca_TextChanged;
             // 
             // FrmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtBusca);
+            Controls.Add(btnDeletar);
+            Controls.Add(btnEditar);
             Controls.Add(txtConfSenha);
             Controls.Add(label6);
             Controls.Add(chkAtivo);
@@ -279,5 +311,8 @@
         private CheckBox chkAtivo;
         private Label label6;
         private TextBox txtConfSenha;
+        private Button btnEditar;
+        private Button btnDeletar;
+        private TextBox txtBusca;
     }
 }

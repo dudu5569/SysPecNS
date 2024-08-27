@@ -30,22 +30,7 @@ namespace SysPecNSDesk
             cmbNIvel.DataSource = niveis;
             cmbNIvel.DisplayMember = "Nome";
             cmbNIvel.ValueMember = "Id";
-
-            //preenchendo o datagrid com os usuarios
-            var lista = Usuario.ObterLista();
-            DgvUsuarios.Rows.Clear();
-            int cont = 0;
-            foreach (var usuario in lista)
-            {
-                DgvUsuarios.Rows.Add();
-                DgvUsuarios.Rows[cont].Cells[0].Value = usuario.Id;
-                DgvUsuarios.Rows[cont].Cells[1].Value = usuario.Nome;
-                DgvUsuarios.Rows[cont].Cells[2].Value = usuario.Email;
-                DgvUsuarios.Rows[cont].Cells[3].Value = usuario.Nivel.Nome;
-                DgvUsuarios.Rows[cont].Cells[4].Value = usuario.Ativo;
-
-                cont++;
-            }
+            CarregaGrid();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -84,6 +69,35 @@ namespace SysPecNSDesk
                 MessageBox.Show("Falha ao gravar usuário!");
             }
 
+        }
+
+        private void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBusca.Text.Length > 0)
+            {
+                CarregaGrid(txtBusca.Text);
+            }
+            else
+            {
+                CarregaGrid();
+            }
+        }
+        private void CarregaGrid(string nome="")
+        {
+            //preenchendo o datagrid com os usuarios
+            var lista = Usuario.ObterLista(nome);
+            DgvUsuarios.Rows.Clear();
+            int cont = 0;
+            foreach (var usuario in lista)
+            {
+                DgvUsuarios.Rows.Add();
+                DgvUsuarios.Rows[cont].Cells[0].Value = usuario.Id;
+                DgvUsuarios.Rows[cont].Cells[1].Value = usuario.Nome;
+                DgvUsuarios.Rows[cont].Cells[2].Value = usuario.Email;
+                DgvUsuarios.Rows[cont].Cells[3].Value = usuario.Nivel.Nome;
+                DgvUsuarios.Rows[cont].Cells[4].Value = usuario.Ativo;
+                cont++;
+            }
         }
     }
 }
