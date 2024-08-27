@@ -40,7 +40,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            textBox1 = new TextBox();
+            txtId = new TextBox();
             txtNome = new TextBox();
             txtEmail = new TextBox();
             txtSenha = new TextBox();
@@ -162,12 +162,13 @@
             label5.TabIndex = 6;
             label5.Text = "Senha";
             // 
-            // textBox1
+            // txtId
             // 
-            textBox1.Location = new Point(131, 96);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(37, 23);
-            textBox1.TabIndex = 7;
+            txtId.Location = new Point(131, 96);
+            txtId.Name = "txtId";
+            txtId.ReadOnly = true;
+            txtId.Size = new Size(37, 23);
+            txtId.TabIndex = 7;
             // 
             // txtNome
             // 
@@ -193,6 +194,7 @@
             // 
             // cmbNIvel
             // 
+            cmbNIvel.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbNIvel.FormattingEnabled = true;
             cmbNIvel.Location = new Point(131, 200);
             cmbNIvel.Name = "cmbNIvel";
@@ -239,7 +241,7 @@
             Controls.Add(txtSenha);
             Controls.Add(txtEmail);
             Controls.Add(txtNome);
-            Controls.Add(textBox1);
+            Controls.Add(txtId);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -269,7 +271,7 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox txtId;
         private TextBox txtNome;
         private TextBox txtEmail;
         private TextBox txtSenha;
