@@ -16,12 +16,22 @@ namespace SysPecNSLib
         public string? Cpf { get; set; } 
         public string? Telefone { get; set;}
         public string? Email { get; set; }
-        public DateTime? Data_nasc { get; set;}
-        public DateTime? Data_cad { get; set; }
+        public DateTime? Data_nasc { get; set; }
+        public DateTime? Data_cad { get; set; } = DateTime.Now;
         public bool Ativo { get; set; }
 
         public Cliente()
         {
+        }
+
+        public Cliente(string? nome, string? cpf, string? telefone, string? email, DateTime? data_nasc, DateTime? data_cad)
+        {
+            Nome = nome;
+            Cpf = cpf;
+            Telefone = telefone;
+            Email = email;
+            Data_nasc = data_nasc;
+            Data_cad = data_cad;
         }
 
         public Cliente(string? nome, string? cpf, string? telefone, string? email, DateTime? data_nasc, DateTime? data_cad, bool ativo)
@@ -51,7 +61,7 @@ namespace SysPecNSLib
         public void Adicionar_Cliente()
         {
             var command = Banco.Abrir();
-            command.CommandType = CommandType.Text;
+            command.CommandType = CommandType.StoredProcedure;
             command.CommandText = "sp_cliente_insert";
             command.Parameters.AddWithValue("spnome", Nome);
             command.Parameters.AddWithValue("spcpf", Cpf);
@@ -94,7 +104,7 @@ namespace SysPecNSLib
             List<Cliente> lista = new();
             var command = Banco.Abrir();
             command.CommandType = CommandType.Text;
-            if (nome = "")
+            if (nome == "")
             {
                 command.CommandText = "select * from clientes order by nome limit 10";
             }
@@ -102,7 +112,59 @@ namespace SysPecNSLib
             {
                 command.CommandText = $"select * from usuarios where nome like '%{nome}%' order by nome";
             }
+            var dr = command.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(
+                    new(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    dr.GetString(3),
+                    dr.GetString(4),
+                    dr.GetDateTime(5),
+                    dr.GetDateTime(6),
+                    dr.GetBoolean(7)
+                        )
+                    );
+            }
+            return lista;
         }
+
+
+        public void atualizar()
+        {
+            var command = Banco.Abrir();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "sp_cliente_update";
+
+            command.Parameters.AddWithValue("spid", Id);
+            command.Parameters.AddWithValue("spnome", Nome);
+            command.Parameters.AddWithValue("sptelefone", Telefone);
+            command.Parameters.AddWithValue("spdatanasc", Data_nasc);
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+
+        public static void Arquivar(int id)
+        {
+            var command = Banco.Abrir();
+            command.CommandType = CommandType.Text;
+            command.CommandText = $"update usuarios set ativo = 0 where id = {id}";
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+
+        public static void Restaurar(int id)
+        {
+            var command = Banco.Abrir();
+            command.CommandType = CommandType.Text;
+            command.CommandText = $"update usuarios set ativo = 1 where id = {id}";
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+
+        
         
 
 

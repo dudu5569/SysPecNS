@@ -61,26 +61,27 @@
             // 
             clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem, listaToolStripMenuItem });
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(122, 22);
+            clientesToolStripMenuItem.Size = new Size(180, 22);
             clientesToolStripMenuItem.Text = "&Clientes";
             // 
             // novoToolStripMenuItem
             // 
             novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            novoToolStripMenuItem.Size = new Size(103, 22);
+            novoToolStripMenuItem.Size = new Size(180, 22);
             novoToolStripMenuItem.Text = "&Novo";
+            novoToolStripMenuItem.Click += novoToolStripMenuItem_Click;
             // 
             // listaToolStripMenuItem
             // 
             listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            listaToolStripMenuItem.Size = new Size(103, 22);
+            listaToolStripMenuItem.Size = new Size(180, 22);
             listaToolStripMenuItem.Text = "&Lista";
             // 
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem1, listarToolStripMenuItem });
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(122, 22);
+            produtosToolStripMenuItem.Size = new Size(180, 22);
             produtosToolStripMenuItem.Text = "&Produtos";
             produtosToolStripMenuItem.Click += produtosToolStripMenuItem_Click;
             // 
@@ -100,7 +101,7 @@
             // 
             usuáriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem2 });
             usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            usuáriosToolStripMenuItem.Size = new Size(122, 22);
+            usuáriosToolStripMenuItem.Size = new Size(180, 22);
             usuáriosToolStripMenuItem.Text = "&Usuários";
             // 
             // novoToolStripMenuItem2
