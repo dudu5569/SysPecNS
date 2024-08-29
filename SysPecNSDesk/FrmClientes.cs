@@ -39,7 +39,6 @@ namespace SysPecNSDesk
                 txtEmail.Clear();
                 txtCpf.Clear();
                 txtTelefone.Clear();
-                dtpNascimento.
             }
         }
     }

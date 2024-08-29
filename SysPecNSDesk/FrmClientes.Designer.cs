@@ -47,12 +47,22 @@
             label7 = new Label();
             dtpNascimento = new DateTimePicker();
             dtpCadastro = new DateTimePicker();
+            groupBox1 = new GroupBox();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            dataGridView1 = new DataGridView();
+            groupBox1.SuspendLayout();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(39, 99);
+            label1.Location = new Point(41, 9);
             label1.Name = "label1";
             label1.Size = new Size(18, 15);
             label1.TabIndex = 0;
@@ -61,7 +71,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(166, 99);
+            label2.Location = new Point(148, 9);
             label2.Name = "label2";
             label2.Size = new Size(40, 15);
             label2.TabIndex = 1;
@@ -69,7 +79,7 @@
             // 
             // txtID
             // 
-            txtID.Location = new Point(39, 117);
+            txtID.Location = new Point(41, 27);
             txtID.Name = "txtID";
             txtID.ReadOnly = true;
             txtID.Size = new Size(49, 23);
@@ -77,7 +87,7 @@
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(166, 117);
+            txtNome.Location = new Point(148, 27);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(236, 23);
             txtNome.TabIndex = 3;
@@ -85,7 +95,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(39, 158);
+            label3.Location = new Point(41, 63);
             label3.Name = "label3";
             label3.Size = new Size(28, 15);
             label3.TabIndex = 4;
@@ -93,14 +103,14 @@
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(39, 176);
+            txtCpf.Location = new Point(41, 81);
             txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(113, 23);
             txtCpf.TabIndex = 5;
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(215, 176);
+            txtTelefone.Location = new Point(217, 81);
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(151, 23);
             txtTelefone.TabIndex = 6;
@@ -108,7 +118,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(215, 158);
+            label4.Location = new Point(217, 63);
             label4.Name = "label4";
             label4.Size = new Size(51, 15);
             label4.TabIndex = 7;
@@ -117,7 +127,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(39, 212);
+            label5.Location = new Point(41, 122);
             label5.Name = "label5";
             label5.Size = new Size(36, 15);
             label5.TabIndex = 8;
@@ -125,7 +135,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(39, 230);
+            txtEmail.Location = new Point(41, 140);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(327, 23);
             txtEmail.TabIndex = 9;
@@ -133,7 +143,7 @@
             // chkAtivo
             // 
             chkAtivo.AutoSize = true;
-            chkAtivo.Location = new Point(396, 234);
+            chkAtivo.Location = new Point(398, 288);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
             chkAtivo.TabIndex = 10;
@@ -142,7 +152,7 @@
             // 
             // btnConfirma
             // 
-            btnConfirma.Location = new Point(39, 302);
+            btnConfirma.Location = new Point(41, 356);
             btnConfirma.Name = "btnConfirma";
             btnConfirma.Size = new Size(75, 23);
             btnConfirma.TabIndex = 11;
@@ -152,7 +162,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(166, 302);
+            btnEditar.Location = new Point(168, 356);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 23);
             btnEditar.TabIndex = 12;
@@ -161,7 +171,7 @@
             // 
             // btnArquivar
             // 
-            btnArquivar.Location = new Point(291, 302);
+            btnArquivar.Location = new Point(293, 356);
             btnArquivar.Name = "btnArquivar";
             btnArquivar.Size = new Size(75, 23);
             btnArquivar.TabIndex = 13;
@@ -170,7 +180,7 @@
             // 
             // btnRestaurar
             // 
-            btnRestaurar.Location = new Point(396, 302);
+            btnRestaurar.Location = new Point(398, 356);
             btnRestaurar.Name = "btnRestaurar";
             btnRestaurar.Size = new Size(75, 23);
             btnRestaurar.TabIndex = 14;
@@ -180,7 +190,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(515, 120);
+            label6.Location = new Point(43, 173);
             label6.Name = "label6";
             label6.Size = new Size(114, 15);
             label6.TabIndex = 15;
@@ -189,7 +199,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(515, 212);
+            label7.Location = new Point(43, 265);
             label7.Name = "label7";
             label7.Size = new Size(97, 15);
             label7.TabIndex = 16;
@@ -198,7 +208,7 @@
             // dtpNascimento
             // 
             dtpNascimento.Format = DateTimePickerFormat.Short;
-            dtpNascimento.Location = new Point(515, 138);
+            dtpNascimento.Location = new Point(43, 191);
             dtpNascimento.Name = "dtpNascimento";
             dtpNascimento.Size = new Size(200, 23);
             dtpNascimento.TabIndex = 17;
@@ -206,39 +216,95 @@
             // dtpCadastro
             // 
             dtpCadastro.Format = DateTimePickerFormat.Short;
-            dtpCadastro.Location = new Point(515, 230);
+            dtpCadastro.Location = new Point(43, 283);
             dtpCadastro.Name = "dtpCadastro";
             dtpCadastro.Size = new Size(200, 23);
             dtpCadastro.TabIndex = 18;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(tabControl1);
+            groupBox1.Location = new Point(76, 42);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(661, 518);
+            groupBox1.TabIndex = 19;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(57, 58);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(574, 439);
+            tabControl1.TabIndex = 0;
+            tabControl1.Tag = "";
+            // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(txtID);
+            tabPage1.Controls.Add(dtpCadastro);
+            tabPage1.Controls.Add(label3);
+            tabPage1.Controls.Add(btnArquivar);
+            tabPage1.Controls.Add(dtpNascimento);
+            tabPage1.Controls.Add(btnRestaurar);
+            tabPage1.Controls.Add(label5);
+            tabPage1.Controls.Add(txtTelefone);
+            tabPage1.Controls.Add(label1);
+            tabPage1.Controls.Add(txtCpf);
+            tabPage1.Controls.Add(txtEmail);
+            tabPage1.Controls.Add(btnEditar);
+            tabPage1.Controls.Add(label7);
+            tabPage1.Controls.Add(label2);
+            tabPage1.Controls.Add(chkAtivo);
+            tabPage1.Controls.Add(label4);
+            tabPage1.Controls.Add(txtNome);
+            tabPage1.Controls.Add(label6);
+            tabPage1.Controls.Add(btnConfirma);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(566, 411);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Dados Cliente";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Controls.Add(dataGridView1);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(566, 411);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Enderecos";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(6, 255);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(554, 150);
+            dataGridView1.TabIndex = 0;
             // 
             // FrmClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(dtpCadastro);
-            Controls.Add(dtpNascimento);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(btnRestaurar);
-            Controls.Add(btnArquivar);
-            Controls.Add(btnEditar);
-            Controls.Add(btnConfirma);
-            Controls.Add(chkAtivo);
-            Controls.Add(txtEmail);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(txtTelefone);
-            Controls.Add(txtCpf);
-            Controls.Add(label3);
-            Controls.Add(txtNome);
-            Controls.Add(txtID);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            ClientSize = new Size(1389, 592);
+            Controls.Add(groupBox1);
             Name = "FrmClientes";
             Text = "FrmClientes";
+            groupBox1.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -262,5 +328,10 @@
         private Label label7;
         private DateTimePicker dtpNascimento;
         private DateTimePicker dtpCadastro;
+        private GroupBox groupBox1;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private DataGridView dataGridView1;
     }
 }

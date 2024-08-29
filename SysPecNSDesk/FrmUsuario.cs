@@ -18,11 +18,6 @@ namespace SysPecNSDesk
             InitializeComponent();
         }
 
-        private void DgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
             //carregando o combobox de niveis
@@ -82,7 +77,7 @@ namespace SysPecNSDesk
                 CarregaGrid();
             }
         }
-        private void CarregaGrid(string nome="")
+        private void CarregaGrid(string nome = "")
         {
             //preenchendo o datagrid com os usuarios
             var lista = Usuario.ObterLista(nome);
@@ -99,5 +94,49 @@ namespace SysPecNSDesk
                 cont++;
             }
         }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (VerificaControles())
+            {
+                var msg = MessageBox.Show("Deseja continuar o cadastro?", "Confirmação de saída", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                if (msg == DialogResult.No) this.Close();
+            }
+            else
+            {
+                Close();
+            }
+        }
+
+        private bool VerificaControles()
+        {
+            if (txtNome.Text != string.Empty
+                || txtEmail.Text != string.Empty
+                || txtSenha.Text != string.Empty
+                || txtConfSenha.Text != string.Empty)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        private void DgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = 0;
+            int posicaoLinha = DgvUsuarios.CurrentRow.Index;
+            id = Convert.ToInt32(DgvUsuarios.Rows[posicaoLinha].Cells[0].Value);
+            MessageBox.Show(id.ToString());
+
+        }
     }
 }
+

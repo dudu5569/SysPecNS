@@ -42,5 +42,17 @@ namespace SysPecNSDesk
             frmClientes.MdiParent = this;
             frmClientes.Show();
         }
+
+        private void operaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
     }
 }
