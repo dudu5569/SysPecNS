@@ -51,12 +51,28 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
-            dataGridView1 = new DataGridView();
+            txtLogradouro = new TextBox();
+            txtCep = new TextBox();
+            button2 = new Button();
+            button1 = new Button();
+            comboBox2 = new ComboBox();
+            label16 = new Label();
+            comboBox1 = new ComboBox();
+            label15 = new Label();
+            label14 = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            txtNumero = new TextBox();
+            txtComplemento = new TextBox();
+            txtBairro = new TextBox();
+            textBox1 = new TextBox();
             groupBox1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -143,7 +159,7 @@
             // chkAtivo
             // 
             chkAtivo.AutoSize = true;
-            chkAtivo.Location = new Point(398, 288);
+            chkAtivo.Location = new Point(276, 288);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
             chkAtivo.TabIndex = 10;
@@ -152,7 +168,7 @@
             // 
             // btnConfirma
             // 
-            btnConfirma.Location = new Point(41, 356);
+            btnConfirma.Location = new Point(41, 334);
             btnConfirma.Name = "btnConfirma";
             btnConfirma.Size = new Size(75, 23);
             btnConfirma.TabIndex = 11;
@@ -162,7 +178,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(168, 356);
+            btnEditar.Location = new Point(160, 334);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 23);
             btnEditar.TabIndex = 12;
@@ -171,7 +187,7 @@
             // 
             // btnArquivar
             // 
-            btnArquivar.Location = new Point(293, 356);
+            btnArquivar.Location = new Point(279, 334);
             btnArquivar.Name = "btnArquivar";
             btnArquivar.Size = new Size(75, 23);
             btnArquivar.TabIndex = 13;
@@ -180,7 +196,7 @@
             // 
             // btnRestaurar
             // 
-            btnRestaurar.Location = new Point(398, 356);
+            btnRestaurar.Location = new Point(398, 334);
             btnRestaurar.Name = "btnRestaurar";
             btnRestaurar.Size = new Size(75, 23);
             btnRestaurar.TabIndex = 14;
@@ -216,7 +232,7 @@
             // dtpCadastro
             // 
             dtpCadastro.Format = DateTimePickerFormat.Short;
-            dtpCadastro.Location = new Point(43, 283);
+            dtpCadastro.Location = new Point(41, 283);
             dtpCadastro.Name = "dtpCadastro";
             dtpCadastro.Size = new Size(200, 23);
             dtpCadastro.TabIndex = 18;
@@ -226,7 +242,7 @@
             groupBox1.Controls.Add(tabControl1);
             groupBox1.Location = new Point(76, 42);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(661, 518);
+            groupBox1.Size = new Size(960, 518);
             groupBox1.TabIndex = 19;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
@@ -235,10 +251,10 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(57, 58);
+            tabControl1.Location = new Point(19, 22);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(574, 439);
+            tabControl1.Size = new Size(935, 475);
             tabControl1.TabIndex = 0;
             tabControl1.Tag = "";
             // 
@@ -266,29 +282,190 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(566, 411);
+            tabPage1.Size = new Size(927, 447);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Dados Cliente";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(dataGridView1);
+            tabPage2.Controls.Add(textBox1);
+            tabPage2.Controls.Add(txtBairro);
+            tabPage2.Controls.Add(txtComplemento);
+            tabPage2.Controls.Add(txtNumero);
+            tabPage2.Controls.Add(txtLogradouro);
+            tabPage2.Controls.Add(txtCep);
+            tabPage2.Controls.Add(button2);
+            tabPage2.Controls.Add(button1);
+            tabPage2.Controls.Add(comboBox2);
+            tabPage2.Controls.Add(label16);
+            tabPage2.Controls.Add(comboBox1);
+            tabPage2.Controls.Add(label15);
+            tabPage2.Controls.Add(label14);
+            tabPage2.Controls.Add(label13);
+            tabPage2.Controls.Add(label12);
+            tabPage2.Controls.Add(label11);
+            tabPage2.Controls.Add(label10);
+            tabPage2.Controls.Add(label9);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(566, 411);
+            tabPage2.Size = new Size(927, 447);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Enderecos";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // txtLogradouro
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 255);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(554, 150);
-            dataGridView1.TabIndex = 0;
+            txtLogradouro.Location = new Point(73, 143);
+            txtLogradouro.Name = "txtLogradouro";
+            txtLogradouro.Size = new Size(358, 23);
+            txtLogradouro.TabIndex = 22;
+            // 
+            // txtCep
+            // 
+            txtCep.Location = new Point(72, 82);
+            txtCep.Name = "txtCep";
+            txtCep.Size = new Size(100, 23);
+            txtCep.TabIndex = 21;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(206, 308);
+            button2.Name = "button2";
+            button2.Size = new Size(101, 31);
+            button2.TabIndex = 20;
+            button2.Text = "&Cancelar";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(71, 308);
+            button1.Name = "button1";
+            button1.Size = new Size(101, 31);
+            button1.TabIndex = 19;
+            button1.Text = "&Inserir";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Residencial", "Corporativo" });
+            comboBox2.Location = new Point(207, 258);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 11;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(207, 240);
+            label16.Name = "label16";
+            label16.Size = new Size(98, 15);
+            label16.TabIndex = 10;
+            label16.Text = "Tipo de Endereço";
+            // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO" });
+            comboBox1.Location = new Point(71, 258);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 9;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(71, 240);
+            label15.Name = "label15";
+            label15.Size = new Size(21, 15);
+            label15.TabIndex = 8;
+            label15.Text = "UF";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(73, 179);
+            label14.Name = "label14";
+            label14.Size = new Size(44, 15);
+            label14.TabIndex = 7;
+            label14.Text = "Cidade";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(463, 179);
+            label13.Name = "label13";
+            label13.Size = new Size(38, 15);
+            label13.TabIndex = 6;
+            label13.Text = "Bairro";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(72, 64);
+            label12.Name = "label12";
+            label12.Size = new Size(28, 15);
+            label12.TabIndex = 5;
+            label12.Text = "CEP";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(612, 125);
+            label11.Name = "label11";
+            label11.Size = new Size(84, 15);
+            label11.TabIndex = 4;
+            label11.Text = "Complemento";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(463, 125);
+            label10.Name = "label10";
+            label10.Size = new Size(51, 15);
+            label10.TabIndex = 3;
+            label10.Text = "Número";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(72, 125);
+            label9.Name = "label9";
+            label9.Size = new Size(76, 15);
+            label9.TabIndex = 2;
+            label9.Text = "Loogradouro";
+            // 
+            // txtNumero
+            // 
+            txtNumero.Location = new Point(463, 143);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(100, 23);
+            txtNumero.TabIndex = 23;
+            // 
+            // txtComplemento
+            // 
+            txtComplemento.Location = new Point(612, 143);
+            txtComplemento.Name = "txtComplemento";
+            txtComplemento.Size = new Size(100, 23);
+            txtComplemento.TabIndex = 24;
+            // 
+            // txtBairro
+            // 
+            txtBairro.Location = new Point(463, 197);
+            txtBairro.Name = "txtBairro";
+            txtBairro.Size = new Size(249, 23);
+            txtBairro.TabIndex = 25;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(73, 197);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(358, 23);
+            textBox1.TabIndex = 26;
             // 
             // FrmClientes
             // 
@@ -303,7 +480,7 @@
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            tabPage2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -332,6 +509,30 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private DataGridView dataGridView1;
+        private Label label14;
+        private Label label13;
+        private Label label12;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private ComboBox comboBox1;
+        private Label label15;
+        private Label label16;
+        private Button button2;
+        private Button button1;
+        private TextBox textBox7;
+        private TextBox textBox6;
+        private TextBox textBox5;
+        private TextBox textBox4;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private ComboBox comboBox2;
+        private TextBox txtCep;
+        private TextBox txtLogradouro;
+        private TextBox txtBairro;
+        private TextBox txtComplemento;
+        private TextBox txtNumero;
     }
 }
