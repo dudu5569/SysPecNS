@@ -140,10 +140,21 @@ namespace SysPecNSLib
             var dr = command.ExecuteReader();
             if (dr.Read())
             {
-
+                endereco = new(
+                    Cliente.ObterPorId(dr.GetInt32(0)),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    dr.GetInt32(3),
+                    dr.GetString(4),
+                    dr.GetString(5),
+                    dr.GetString(6)
+                    );
             }
 
+            return endereco;
         }
+
+
 
 
 
