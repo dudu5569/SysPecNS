@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,9 +75,9 @@ namespace SysPecNSDesk
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             Produto produto = new(txtCodBarras.Text, txtDescricao.Text,
-                double.Parse(txtValorUnit.Text),txtUnidadeVenda.Text,
+                double.Parse(txtValorUnit.Text), txtUnidadeVenda.Text,
                 Categoria.ObterPorId(Convert.ToInt32(cmbCategoria.SelectedValue)),
-                (int)npEstoqueMinimo.Value,double.Parse(txtDesconto.Text)                
+                (int)npEstoqueMinimo.Value, double.Parse(txtDesconto.Text)
                 );
 
             produto.Inserir();
@@ -83,6 +85,93 @@ namespace SysPecNSDesk
             {
                 MessageBox.Show($"Produto gravado com sucesso com o Id {produto.Id}");
                 FrmProdutos_Load(sender, e);
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            if (btnConsultar.Text == "&Consultar")
+            {
+                txtCodBarras.Clear();
+                txtValorUnit.Clear();
+                txtUnidadeVenda.Clear();
+                txtDescricao.Clear();
+                txtDesconto.Clear();
+                npEstoqueMinimo.Value = 0;
+                btnConsultar.Text = "&Obter por ID";
+                txtID.Focus();
+                txtID.ReadOnly = false;
+            }
+            else
+            {
+                if (txtID.Text.Length > 0)
+                {
+                    Produto produto = Produto.ObterPorId(int.Parse(txtID.Text));
+                    txtCodBarras.Text = produto.CodBar;
+                    txtValorUnit.Text = Convert.ToString(produto.ValorUnit);
+                    txtDescricao.Text = produto.Descricao;
+                    txtDesconto.Text = produto.ClasseDesconto.ToString();
+                    txtUnidadeVenda.Text = produto.UnidadeVenda;
+                    // npEstoqueMinimo.Value = produto.EstoqueMinimo;
+                    cmbCategoria.SelectedIndex =
+                         cmbCategoria.FindString(produto.Categoria.Nome);
+                    btnEditar.Enabled = true;
+                    btnConsultar.Text = "&Limpar";
+
+                    btnConsultar.Click += (object sender, EventArgs e) =>
+                    {
+                        Limpou();
+                    };
+                    
+                }
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Produto produto = new(
+                int.Parse(txtID.Text),
+                txtCodBarras.Text,
+                txtDescricao.Text,
+                double.Parse(txtValorUnit.Text),
+                txtUnidadeVenda.Text,
+                Categoria.ObterPorId(Convert.ToInt32(cmbCategoria.SelectedValue)),
+                (double)npEstoqueMinimo.Value,
+                double.Parse(txtDesconto.Text),
+                null, null
+                );
+
+            produto.Atualizar(); //grava as atualizações no banco
+
+            MessageBox.Show($"Produto {produto.Id} - {produto.Descricao} atualizado com sucesso!");
+            btnEditar.Enabled = false;
+            txtID.ReadOnly = true;
+            btnConsultar.Text = "&Consultar";
+            LimpaControles();
+            FrmProdutos_Load(sender, e);
+        }
+
+        private void LimpaControles()
+        {
+            txtCodBarras.Clear();
+            txtValorUnit.Clear();
+            txtUnidadeVenda.Clear();
+            txtDescricao.Clear();
+            txtDesconto.Clear();
+            npEstoqueMinimo.Value = 0;
+        }
+
+        public void Limpou()
+        {
+            if (btnConsultar.Text == "&Limpar")
+            {
+                LimpaControles();
+                txtID.Clear();
             }
         }
     }

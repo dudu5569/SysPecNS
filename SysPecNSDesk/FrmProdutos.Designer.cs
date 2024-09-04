@@ -91,28 +91,32 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Produtos";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // btnConsultar
             // 
-            btnConsultar.Location = new Point(441, 273);
+            btnConsultar.Location = new Point(434, 254);
             btnConsultar.Name = "btnConsultar";
             btnConsultar.Size = new Size(75, 23);
             btnConsultar.TabIndex = 20;
             btnConsultar.Text = "&Consultar";
             btnConsultar.UseVisualStyleBackColor = true;
+            btnConsultar.Click += btnConsultar_Click;
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(327, 273);
+            btnEditar.Enabled = false;
+            btnEditar.Location = new Point(320, 254);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 23);
             btnEditar.TabIndex = 19;
             btnEditar.Text = "&Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnAdicionar
             // 
-            btnAdicionar.Location = new Point(206, 273);
+            btnAdicionar.Location = new Point(199, 254);
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Size = new Size(75, 23);
             btnAdicionar.TabIndex = 18;
@@ -122,14 +126,14 @@
             // 
             // txtDesconto
             // 
-            txtDesconto.Location = new Point(37, 273);
+            txtDesconto.Location = new Point(34, 255);
             txtDesconto.Name = "txtDesconto";
             txtDesconto.Size = new Size(100, 23);
             txtDesconto.TabIndex = 17;
             // 
             // npEstoqueMinimo
             // 
-            npEstoqueMinimo.Location = new Point(525, 124);
+            npEstoqueMinimo.Location = new Point(523, 123);
             npEstoqueMinimo.Name = "npEstoqueMinimo";
             npEstoqueMinimo.Size = new Size(47, 23);
             npEstoqueMinimo.TabIndex = 16;
@@ -137,7 +141,7 @@
             // cmbCategoria
             // 
             cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Location = new Point(203, 208);
+            cmbCategoria.Location = new Point(203, 190);
             cmbCategoria.Name = "cmbCategoria";
             cmbCategoria.Size = new Size(262, 23);
             cmbCategoria.TabIndex = 15;
@@ -145,21 +149,21 @@
             // 
             // txtDescricao
             // 
-            txtDescricao.Location = new Point(37, 208);
+            txtDescricao.Location = new Point(34, 190);
             txtDescricao.Name = "txtDescricao";
             txtDescricao.Size = new Size(100, 23);
             txtDescricao.TabIndex = 13;
             // 
             // txtUnidadeVenda
             // 
-            txtUnidadeVenda.Location = new Point(363, 123);
+            txtUnidadeVenda.Location = new Point(361, 123);
             txtUnidadeVenda.Name = "txtUnidadeVenda";
             txtUnidadeVenda.Size = new Size(100, 23);
             txtUnidadeVenda.TabIndex = 11;
             // 
             // txtValorUnit
             // 
-            txtValorUnit.Location = new Point(203, 123);
+            txtValorUnit.Location = new Point(199, 123);
             txtValorUnit.Name = "txtValorUnit";
             txtValorUnit.Size = new Size(100, 23);
             txtValorUnit.TabIndex = 10;
@@ -175,13 +179,14 @@
             // 
             txtID.Location = new Point(37, 67);
             txtID.Name = "txtID";
+            txtID.ReadOnly = true;
             txtID.Size = new Size(65, 23);
             txtID.TabIndex = 8;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(203, 190);
+            label9.Location = new Point(203, 166);
             label9.Name = "label9";
             label9.Size = new Size(58, 15);
             label9.TabIndex = 7;
@@ -190,7 +195,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(37, 190);
+            label8.Location = new Point(34, 166);
             label8.Name = "label8";
             label8.Size = new Size(58, 15);
             label8.TabIndex = 6;
@@ -199,7 +204,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(203, 105);
+            label7.Location = new Point(199, 105);
             label7.Name = "label7";
             label7.Size = new Size(78, 15);
             label7.TabIndex = 5;
@@ -209,7 +214,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(525, 105);
+            label6.Location = new Point(523, 105);
             label6.Name = "label6";
             label6.Size = new Size(94, 15);
             label6.TabIndex = 4;
@@ -218,7 +223,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(38, 255);
+            label5.Location = new Point(34, 237);
             label5.Name = "label5";
             label5.Size = new Size(57, 15);
             label5.TabIndex = 3;
@@ -227,7 +232,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(363, 105);
+            label4.Location = new Point(361, 105);
             label4.Name = "label4";
             label4.Size = new Size(102, 15);
             label4.TabIndex = 2;
@@ -352,7 +357,7 @@
             Controls.Add(label1);
             Controls.Add(groupBox1);
             Name = "FrmProdutos";
-            Text = "FrmProdutos";
+            Text = "Inserir Novo Produto";
             Load += FrmProdutos_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
