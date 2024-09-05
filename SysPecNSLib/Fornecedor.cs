@@ -85,7 +85,7 @@ namespace SysPecNSLib
         public static Fornecedor ObterPorId(int id)
         {
             Fornecedor fornecedor = new();
-            var cmd = Banco.Abrir()
+            var cmd = Banco.Abrir();
             cmd.CommandText = $"select * from fornecedores where id = {id}";
             var dr = cmd.ExecuteReader();
             while (dr.Read())

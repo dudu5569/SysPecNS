@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SysPecNSLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,77 @@ namespace SysPecNSDesk
         public FrmFornecedores()
         {
             InitializeComponent();
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = new(
+                txtRazaoSocial.Text,
+                txtFantasia.Text,
+                txtCnpj.Text,
+                txtContato.Text,
+                txtTelefone.Text,
+                txtEmail.Text
+                );
+
+            fornecedor.Inserir();
+            if (fornecedor.Id > 0)
+            {
+                txtId.Text = fornecedor.Id.ToString();
+                MessageBox.Show($"O fornecedor com o id `{fornecedor.Id}, foi inserido com sucesso!");
+                txtCnpj.Clear();
+                txtContato.Clear();
+                txtEmail.Clear();
+                txtFantasia.Clear();
+                txtRazaoSocial.Clear();
+                txtTelefone.Clear();
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = new(
+                int.Parse(txtId.Text),
+                txtRazaoSocial.Text,
+                txtFantasia.Text,
+                txtCnpj.Text,
+                txtContato.Text,
+                txtTelefone.Text,
+                txtEmail.Text
+                );
+            fornecedor.Atualizar();
+            MessageBox.Show($"Fornecedor com o id {fornecedor.Id}, foi alterado com sucesso!");
+            btnEditar.Enabled = false;
+            btnConsulta.Text = "&Consulta";
+            LimpaControles();
+        }
+
+
+        private void LimpaControles()
+        {
+            txtRazaoSocial.Clear();
+            txtFantasia.Clear();
+            txtCnpj.Clear();
+            txtContato.Clear();
+            txtTelefone.Clear();
+            txtEmail.Clear();
+        }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            if (btnConsulta.Text == "&Consulta")
+            {
+                txtRazaoSocial.Clear();
+                txtFantasia.Clear();
+                txtCnpj.Clear();
+                txtContato.Clear();
+                txtTelefone.Clear();
+                txtEmail.Clear();
+                txtId.ReadOnly = false;
+                txtId.Focus();
+                btnConsulta.Text = "&Obter por ID";
+
+            }
         }
     }
 }

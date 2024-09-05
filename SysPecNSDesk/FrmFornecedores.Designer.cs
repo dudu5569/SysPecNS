@@ -37,18 +37,18 @@
             label7 = new Label();
             label8 = new Label();
             groupBox1 = new GroupBox();
-            txtId = new TextBox();
-            txtRazaoSocial = new TextBox();
-            txtFantasia = new TextBox();
-            txtCnpj = new TextBox();
-            txtContato = new TextBox();
-            txtTelefone = new TextBox();
-            txtEmail = new TextBox();
-            btnInserir = new Button();
-            btnEditar = new Button();
-            btnConsulta = new Button();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            txtId = new TextBox();
+            btnConsulta = new Button();
+            btnEditar = new Button();
+            btnInserir = new Button();
+            txtEmail = new TextBox();
+            txtTelefone = new TextBox();
+            txtContato = new TextBox();
+            txtCnpj = new TextBox();
+            txtFantasia = new TextBox();
+            txtRazaoSocial = new TextBox();
             tabPage2 = new TabPage();
             dgvFornecedores = new DataGridView();
             clnId = new DataGridViewTextBoxColumn();
@@ -148,82 +148,6 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Inserir Fornecedores";
             // 
-            // txtId
-            // 
-            txtId.Location = new Point(48, 50);
-            txtId.Name = "txtId";
-            txtId.Size = new Size(62, 23);
-            txtId.TabIndex = 8;
-            // 
-            // txtRazaoSocial
-            // 
-            txtRazaoSocial.Location = new Point(48, 115);
-            txtRazaoSocial.Name = "txtRazaoSocial";
-            txtRazaoSocial.Size = new Size(280, 23);
-            txtRazaoSocial.TabIndex = 9;
-            // 
-            // txtFantasia
-            // 
-            txtFantasia.Location = new Point(48, 176);
-            txtFantasia.Name = "txtFantasia";
-            txtFantasia.Size = new Size(280, 23);
-            txtFantasia.TabIndex = 10;
-            // 
-            // txtCnpj
-            // 
-            txtCnpj.Location = new Point(48, 243);
-            txtCnpj.Name = "txtCnpj";
-            txtCnpj.Size = new Size(141, 23);
-            txtCnpj.TabIndex = 11;
-            // 
-            // txtContato
-            // 
-            txtContato.Location = new Point(247, 243);
-            txtContato.Name = "txtContato";
-            txtContato.Size = new Size(100, 23);
-            txtContato.TabIndex = 12;
-            // 
-            // txtTelefone
-            // 
-            txtTelefone.Location = new Point(387, 115);
-            txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(171, 23);
-            txtTelefone.TabIndex = 12;
-            // 
-            // txtEmail
-            // 
-            txtEmail.Location = new Point(387, 176);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(247, 23);
-            txtEmail.TabIndex = 12;
-            // 
-            // btnInserir
-            // 
-            btnInserir.Location = new Point(59, 317);
-            btnInserir.Name = "btnInserir";
-            btnInserir.Size = new Size(75, 23);
-            btnInserir.TabIndex = 13;
-            btnInserir.Text = "&Inserir";
-            btnInserir.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            btnEditar.Location = new Point(183, 317);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(75, 23);
-            btnEditar.TabIndex = 14;
-            btnEditar.Text = "&Editar";
-            btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnConsulta
-            // 
-            btnConsulta.Location = new Point(307, 317);
-            btnConsulta.Name = "btnConsulta";
-            btnConsulta.Size = new Size(75, 23);
-            btnConsulta.TabIndex = 15;
-            btnConsulta.Text = "&Consulta";
-            btnConsulta.UseVisualStyleBackColor = true;
-            // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
@@ -260,6 +184,87 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Inserir";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtId
+            // 
+            txtId.Location = new Point(48, 50);
+            txtId.Name = "txtId";
+            txtId.ReadOnly = true;
+            txtId.Size = new Size(62, 23);
+            txtId.TabIndex = 8;
+            // 
+            // btnConsulta
+            // 
+            btnConsulta.Location = new Point(307, 317);
+            btnConsulta.Name = "btnConsulta";
+            btnConsulta.Size = new Size(75, 23);
+            btnConsulta.TabIndex = 15;
+            btnConsulta.Text = "&Consulta";
+            btnConsulta.UseVisualStyleBackColor = true;
+            btnConsulta.Click += btnConsulta_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Enabled = false;
+            btnEditar.Location = new Point(183, 317);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(75, 23);
+            btnEditar.TabIndex = 14;
+            btnEditar.Text = "&Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnInserir
+            // 
+            btnInserir.Location = new Point(59, 317);
+            btnInserir.Name = "btnInserir";
+            btnInserir.Size = new Size(75, 23);
+            btnInserir.TabIndex = 13;
+            btnInserir.Text = "&Inserir";
+            btnInserir.UseVisualStyleBackColor = true;
+            btnInserir.Click += btnInserir_Click;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(387, 176);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(247, 23);
+            txtEmail.TabIndex = 12;
+            // 
+            // txtTelefone
+            // 
+            txtTelefone.Location = new Point(387, 115);
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.Size = new Size(171, 23);
+            txtTelefone.TabIndex = 12;
+            // 
+            // txtContato
+            // 
+            txtContato.Location = new Point(247, 243);
+            txtContato.Name = "txtContato";
+            txtContato.Size = new Size(100, 23);
+            txtContato.TabIndex = 12;
+            // 
+            // txtCnpj
+            // 
+            txtCnpj.Location = new Point(48, 243);
+            txtCnpj.Name = "txtCnpj";
+            txtCnpj.Size = new Size(141, 23);
+            txtCnpj.TabIndex = 11;
+            // 
+            // txtFantasia
+            // 
+            txtFantasia.Location = new Point(48, 176);
+            txtFantasia.Name = "txtFantasia";
+            txtFantasia.Size = new Size(280, 23);
+            txtFantasia.TabIndex = 10;
+            // 
+            // txtRazaoSocial
+            // 
+            txtRazaoSocial.Location = new Point(48, 115);
+            txtRazaoSocial.Name = "txtRazaoSocial";
+            txtRazaoSocial.Size = new Size(280, 23);
+            txtRazaoSocial.TabIndex = 9;
             // 
             // tabPage2
             // 
