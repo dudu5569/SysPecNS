@@ -51,6 +51,10 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            textBox1 = new TextBox();
+            txtBairro = new TextBox();
+            txtComplemento = new TextBox();
+            txtNumero = new TextBox();
             txtLogradouro = new TextBox();
             txtCep = new TextBox();
             button2 = new Button();
@@ -65,10 +69,6 @@
             label11 = new Label();
             label10 = new Label();
             label9 = new Label();
-            txtNumero = new TextBox();
-            txtComplemento = new TextBox();
-            txtBairro = new TextBox();
-            textBox1 = new TextBox();
             groupBox1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -286,6 +286,7 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Dados Cliente";
             tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Click += tabPage1_Click;
             // 
             // tabPage2
             // 
@@ -314,6 +315,34 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Enderecos";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(73, 197);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(358, 23);
+            textBox1.TabIndex = 26;
+            // 
+            // txtBairro
+            // 
+            txtBairro.Location = new Point(463, 197);
+            txtBairro.Name = "txtBairro";
+            txtBairro.Size = new Size(249, 23);
+            txtBairro.TabIndex = 25;
+            // 
+            // txtComplemento
+            // 
+            txtComplemento.Location = new Point(612, 143);
+            txtComplemento.Name = "txtComplemento";
+            txtComplemento.Size = new Size(100, 23);
+            txtComplemento.TabIndex = 24;
+            // 
+            // txtNumero
+            // 
+            txtNumero.Location = new Point(463, 143);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(100, 23);
+            txtNumero.TabIndex = 23;
             // 
             // txtLogradouro
             // 
@@ -438,34 +467,6 @@
             label9.Size = new Size(76, 15);
             label9.TabIndex = 2;
             label9.Text = "Loogradouro";
-            // 
-            // txtNumero
-            // 
-            txtNumero.Location = new Point(463, 143);
-            txtNumero.Name = "txtNumero";
-            txtNumero.Size = new Size(100, 23);
-            txtNumero.TabIndex = 23;
-            // 
-            // txtComplemento
-            // 
-            txtComplemento.Location = new Point(612, 143);
-            txtComplemento.Name = "txtComplemento";
-            txtComplemento.Size = new Size(100, 23);
-            txtComplemento.TabIndex = 24;
-            // 
-            // txtBairro
-            // 
-            txtBairro.Location = new Point(463, 197);
-            txtBairro.Name = "txtBairro";
-            txtBairro.Size = new Size(249, 23);
-            txtBairro.TabIndex = 25;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(73, 197);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(358, 23);
-            textBox1.TabIndex = 26;
             // 
             // FrmClientes
             // 

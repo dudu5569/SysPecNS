@@ -27,7 +27,7 @@ namespace SysPecNSDesk
                 txtEmail.Text,
                 dtpNascimento.Value,
                 dtpCadastro.Value = DateTime.Now
-                ); 
+                );
             cliente.Adicionar_Cliente();
             if (cliente.Id > 0)
             {
@@ -40,6 +40,11 @@ namespace SysPecNSDesk
                 txtCpf.Clear();
                 txtTelefone.Clear();
             }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
