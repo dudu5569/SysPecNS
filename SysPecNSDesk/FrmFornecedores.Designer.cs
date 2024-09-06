@@ -289,6 +289,7 @@
             dgvFornecedores.RowHeadersVisible = false;
             dgvFornecedores.Size = new Size(888, 354);
             dgvFornecedores.TabIndex = 0;
+            dgvFornecedores.CellContentClick += dgvFornecedores_CellContentClick;
             // 
             // clnId
             // 

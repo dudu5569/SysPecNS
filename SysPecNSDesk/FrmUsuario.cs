@@ -137,6 +137,11 @@ namespace SysPecNSDesk
             MessageBox.Show(id.ToString());
 
         }
+
+        private void DgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 

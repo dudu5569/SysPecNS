@@ -85,8 +85,15 @@ namespace SysPecNSDesk
                 txtId.ReadOnly = false;
                 txtId.Focus();
                 btnConsulta.Text = "&Obter por ID";
-
             }
+        }
+
+        private void dgvFornecedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = 0;
+            int posicaolinha = dgvFornecedores.CurrentRow.Index;
+            id = Convert.ToInt32(dgvFornecedores.Rows[posicaolinha].Cells[0].Value);
+            MessageBox.Show(id.ToString());
         }
     }
 }

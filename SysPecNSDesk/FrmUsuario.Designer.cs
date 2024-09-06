@@ -69,6 +69,7 @@
             DgvUsuarios.Size = new Size(500, 150);
             DgvUsuarios.TabIndex = 9;
             DgvUsuarios.CellClick += DgvUsuarios_CellClick;
+            DgvUsuarios.CellContentClick += DgvUsuarios_CellContentClick;
             // 
             // clnId
             // 
