@@ -41,13 +41,13 @@
             novoToolStripMenuItem2 = new ToolStripMenuItem();
             operaçãoToolStripMenuItem = new ToolStripMenuItem();
             pedidosToolStripMenuItem = new ToolStripMenuItem();
+            novoToolStripMenuItem3 = new ToolStripMenuItem();
+            listaToolStripMenuItem1 = new ToolStripMenuItem();
             operaçãoToolStripMenuItem1 = new ToolStripMenuItem();
             caizaToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
-            novoToolStripMenuItem3 = new ToolStripMenuItem();
-            listaToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -138,6 +138,19 @@
             pedidosToolStripMenuItem.Size = new Size(180, 22);
             pedidosToolStripMenuItem.Text = "&Pedidos";
             // 
+            // novoToolStripMenuItem3
+            // 
+            novoToolStripMenuItem3.Name = "novoToolStripMenuItem3";
+            novoToolStripMenuItem3.Size = new Size(180, 22);
+            novoToolStripMenuItem3.Text = "&Novo";
+            novoToolStripMenuItem3.Click += novoToolStripMenuItem3_Click;
+            // 
+            // listaToolStripMenuItem1
+            // 
+            listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
+            listaToolStripMenuItem1.Size = new Size(180, 22);
+            listaToolStripMenuItem1.Text = "&Lista";
+            // 
             // operaçãoToolStripMenuItem1
             // 
             operaçãoToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { caizaToolStripMenuItem });
@@ -172,18 +185,6 @@
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.Size = new Size(12, 17);
             toolStripStatusLabel1.Text = "-";
-            // 
-            // novoToolStripMenuItem3
-            // 
-            novoToolStripMenuItem3.Name = "novoToolStripMenuItem3";
-            novoToolStripMenuItem3.Size = new Size(180, 22);
-            novoToolStripMenuItem3.Text = "&Novo";
-            // 
-            // listaToolStripMenuItem1
-            // 
-            listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
-            listaToolStripMenuItem1.Size = new Size(180, 22);
-            listaToolStripMenuItem1.Text = "&Lista";
             // 
             // FrmPrincipal
             // 
