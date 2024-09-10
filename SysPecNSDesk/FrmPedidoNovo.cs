@@ -104,10 +104,6 @@ namespace SysPecNSDesk
                 dgvItensPedido.Rows[linha].Cells[5].Value = item.Desconto;
                 dgvItensPedido.Rows[linha].Cells[6].Value = item.ValorUnit * item.Quantidade - item.Desconto;
                 linha++;
-                total += item.ValorUnit * item.Quantidade - item.Desconto;
-                
-
-
             }
         }
     }

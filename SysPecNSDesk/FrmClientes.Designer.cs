@@ -51,14 +51,16 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
-            textBox1 = new TextBox();
+            txtIdCliente = new TextBox();
+            label17 = new Label();
+            txtCidade = new TextBox();
             txtBairro = new TextBox();
             txtComplemento = new TextBox();
             txtNumero = new TextBox();
             txtLogradouro = new TextBox();
             txtCep = new TextBox();
             button2 = new Button();
-            button1 = new Button();
+            btnInsereEndereco = new Button();
             comboBox2 = new ComboBox();
             label16 = new Label();
             comboBox1 = new ComboBox();
@@ -290,14 +292,16 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(textBox1);
+            tabPage2.Controls.Add(txtIdCliente);
+            tabPage2.Controls.Add(label17);
+            tabPage2.Controls.Add(txtCidade);
             tabPage2.Controls.Add(txtBairro);
             tabPage2.Controls.Add(txtComplemento);
             tabPage2.Controls.Add(txtNumero);
             tabPage2.Controls.Add(txtLogradouro);
             tabPage2.Controls.Add(txtCep);
             tabPage2.Controls.Add(button2);
-            tabPage2.Controls.Add(button1);
+            tabPage2.Controls.Add(btnInsereEndereco);
             tabPage2.Controls.Add(comboBox2);
             tabPage2.Controls.Add(label16);
             tabPage2.Controls.Add(comboBox1);
@@ -316,12 +320,29 @@
             tabPage2.Text = "Enderecos";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtIdCliente
             // 
-            textBox1.Location = new Point(73, 197);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(358, 23);
-            textBox1.TabIndex = 26;
+            txtIdCliente.Location = new Point(71, 31);
+            txtIdCliente.Name = "txtIdCliente";
+            txtIdCliente.Size = new Size(100, 23);
+            txtIdCliente.TabIndex = 28;
+            txtIdCliente.TextChanged += txtIdCliente_TextChanged;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(78, 13);
+            label17.Name = "label17";
+            label17.Size = new Size(18, 15);
+            label17.TabIndex = 27;
+            label17.Text = "ID";
+            // 
+            // txtCidade
+            // 
+            txtCidade.Location = new Point(73, 197);
+            txtCidade.Name = "txtCidade";
+            txtCidade.Size = new Size(358, 23);
+            txtCidade.TabIndex = 26;
             // 
             // txtBairro
             // 
@@ -367,14 +388,15 @@
             button2.Text = "&Cancelar";
             button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnInsereEndereco
             // 
-            button1.Location = new Point(71, 308);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 31);
-            button1.TabIndex = 19;
-            button1.Text = "&Inserir";
-            button1.UseVisualStyleBackColor = true;
+            btnInsereEndereco.Location = new Point(71, 308);
+            btnInsereEndereco.Name = "btnInsereEndereco";
+            btnInsereEndereco.Size = new Size(101, 31);
+            btnInsereEndereco.TabIndex = 19;
+            btnInsereEndereco.Text = "&Inserir";
+            btnInsereEndereco.UseVisualStyleBackColor = true;
+            btnInsereEndereco.Click += btnInsereEndereco_Click;
             // 
             // comboBox2
             // 
@@ -521,19 +543,21 @@
         private Label label15;
         private Label label16;
         private Button button2;
-        private Button button1;
+        private Button btnInsereEndereco;
         private TextBox textBox7;
         private TextBox textBox6;
         private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
         private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtCidade;
         private ComboBox comboBox2;
         private TextBox txtCep;
         private TextBox txtLogradouro;
         private TextBox txtBairro;
         private TextBox txtComplemento;
         private TextBox txtNumero;
+        private TextBox txtIdCliente;
+        private Label label17;
     }
 }

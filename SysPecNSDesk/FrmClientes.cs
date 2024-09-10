@@ -39,12 +39,39 @@ namespace SysPecNSDesk
                 txtEmail.Clear();
                 txtCpf.Clear();
                 txtTelefone.Clear();
+
+                txtIdCliente.Text = cliente.Id.ToString();
+                tabPage2.Show();
             }
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtIdCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInsereEndereco_Click(object sender, EventArgs e)
+        {
+            Endereco endereco = new(
+                Cliente.ObterPorId(Convert.ToInt32(txtID.Text)),
+                txtCep.Text,
+                txtLogradouro.Text,
+                Convert.ToInt32(txtNumero.Text),
+                txtComplemento.Text,
+                txtCidade.Text,
+                txtBairro.Text
+                );
+                endereco.Inserir();
+
+                if (endereco.Id > 0)
+                {
+                    MessageBox.Show("Endereço adicionado com sucesso!");
+                }
         }
     }
 }
