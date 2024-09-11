@@ -54,6 +54,13 @@
             tabEndereco = new TabPage();
             btnEscolherCliente = new Button();
             txtIDCliente = new TextBox();
+
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            btnEscolherCliente = new Button();
+            txtIdCliente = new TextBox();
+
             label17 = new Label();
             txtCidade = new TextBox();
             txtBairro = new TextBox();
@@ -63,7 +70,11 @@
             txtCep = new TextBox();
             button2 = new Button();
             btnInsereEndereco = new Button();
+
             cmbTipoEndereco = new ComboBox();
+
+            comboBox2 = new ComboBox();
+
             label16 = new Label();
             cmbUf = new ComboBox();
             label15 = new Label();
@@ -288,6 +299,7 @@
             // 
             // btnIREndereco
             // 
+<<<<<<< HEAD
             btnIREndereco.Location = new Point(41, 372);
             btnIREndereco.Name = "btnIREndereco";
             btnIREndereco.Size = new Size(99, 44);
@@ -351,11 +363,64 @@
             txtIDCliente.ReadOnly = true;
             txtIDCliente.Size = new Size(100, 23);
             txtIDCliente.TabIndex = 28;
+=======
+            tabPage2.Controls.Add(btnEscolherCliente);
+            tabPage2.Controls.Add(txtIdCliente);
+            tabPage2.Controls.Add(label17);
+            tabPage2.Controls.Add(txtCidade);
+            tabPage2.Controls.Add(txtBairro);
+            tabPage2.Controls.Add(txtComplemento);
+            tabPage2.Controls.Add(txtNumero);
+            tabPage2.Controls.Add(txtLogradouro);
+            tabPage2.Controls.Add(txtCep);
+            tabPage2.Controls.Add(button2);
+            tabPage2.Controls.Add(btnInsereEndereco);
+            tabPage2.Controls.Add(comboBox2);
+            tabPage2.Controls.Add(label16);
+            tabPage2.Controls.Add(comboBox1);
+            tabPage2.Controls.Add(label15);
+            tabPage2.Controls.Add(label14);
+            tabPage2.Controls.Add(label13);
+            tabPage2.Controls.Add(label12);
+            tabPage2.Controls.Add(label11);
+            tabPage2.Controls.Add(label10);
+            tabPage2.Controls.Add(label9);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(927, 447);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Enderecos";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnEscolherCliente
+            // 
+            btnEscolherCliente.Location = new Point(328, 300);
+            btnEscolherCliente.Name = "btnEscolherCliente";
+            btnEscolherCliente.Size = new Size(89, 46);
+            btnEscolherCliente.TabIndex = 29;
+            btnEscolherCliente.Text = "Escolher Cliente";
+            btnEscolherCliente.UseVisualStyleBackColor = true;
+            btnEscolherCliente.Click += btnEscolherCliente_Click;
+            // 
+            // txtIdCliente
+            // 
+            txtIdCliente.Location = new Point(71, 31);
+            txtIdCliente.Name = "txtIdCliente";
+            txtIdCliente.ReadOnly = true;
+            txtIdCliente.Size = new Size(100, 23);
+            txtIdCliente.TabIndex = 28;
+            txtIdCliente.TextChanged += txtIdCliente_TextChanged;
+>>>>>>> bd41356c690f0384f5a3f67ea68372ddcb2601f3
             // 
             // label17
             // 
             label17.AutoSize = true;
+<<<<<<< HEAD
             label17.Location = new Point(73, 20);
+=======
+            label17.Location = new Point(78, 13);
+>>>>>>> bd41356c690f0384f5a3f67ea68372ddcb2601f3
             label17.Name = "label17";
             label17.Size = new Size(18, 15);
             label17.TabIndex = 27;
@@ -424,6 +489,7 @@
             // 
             // cmbTipoEndereco
             // 
+<<<<<<< HEAD
             cmbTipoEndereco.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipoEndereco.FormattingEnabled = true;
             cmbTipoEndereco.Items.AddRange(new object[] { "Residencial", "Corporativo" });
@@ -431,6 +497,15 @@
             cmbTipoEndereco.Name = "cmbTipoEndereco";
             cmbTipoEndereco.Size = new Size(121, 23);
             cmbTipoEndereco.TabIndex = 11;
+=======
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "RES", "COR" });
+            comboBox2.Location = new Point(207, 258);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 11;
+>>>>>>> bd41356c690f0384f5a3f67ea68372ddcb2601f3
             // 
             // label16
             // 
@@ -574,16 +649,26 @@
         private TextBox textBox3;
         private TextBox textBox2;
         private TextBox txtCidade;
+<<<<<<< HEAD
         private ComboBox cmbTipoEndereco;
+=======
+        private ComboBox comboBox2;
+>>>>>>> bd41356c690f0384f5a3f67ea68372ddcb2601f3
         private TextBox txtCep;
         private TextBox txtLogradouro;
         private TextBox txtBairro;
         private TextBox txtComplemento;
         private TextBox txtNumero;
+<<<<<<< HEAD
         private TextBox txtIDCliente;
         private Label label17;
         private TextBox txtCpf;
         private Button btnEscolherCliente;
         private Button btnIREndereco;
+=======
+        private TextBox txtIdCliente;
+        private Label label17;
+        private Button btnEscolherCliente;
+>>>>>>> bd41356c690f0384f5a3f67ea68372ddcb2601f3
     }
 }
