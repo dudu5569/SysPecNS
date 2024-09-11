@@ -91,10 +91,7 @@ namespace SysPecNSLib
             command.Parameters.AddWithValue("spuf", Uf);
             command.Parameters.AddWithValue("sptipo_endereco", Tipo_Endereco);
             var dr = command.ExecuteReader();
-            while (dr.Read())
-            {
-                Id = dr.GetInt32(0);
-            }
+            while (dr.Read())Id = dr.GetInt32(0);
         }
 
         public static Endereco ObterPorId(int Id)
