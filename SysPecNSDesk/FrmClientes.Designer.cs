@@ -33,7 +33,6 @@
             txtID = new TextBox();
             txtNome = new TextBox();
             label3 = new Label();
-            txtCpf = new TextBox();
             txtTelefone = new TextBox();
             label4 = new Label();
             label5 = new Label();
@@ -48,20 +47,25 @@
             dtpNascimento = new DateTimePicker();
             dtpCadastro = new DateTimePicker();
             groupBox1 = new GroupBox();
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
-            textBox1 = new TextBox();
+            tabpage1 = new TabControl();
+            tabCliente = new TabPage();
+            btnIREndereco = new Button();
+            txtCpf = new TextBox();
+            tabEndereco = new TabPage();
+            btnEscolherCliente = new Button();
+            txtIDCliente = new TextBox();
+            label17 = new Label();
+            txtCidade = new TextBox();
             txtBairro = new TextBox();
             txtComplemento = new TextBox();
             txtNumero = new TextBox();
             txtLogradouro = new TextBox();
             txtCep = new TextBox();
             button2 = new Button();
-            button1 = new Button();
-            comboBox2 = new ComboBox();
+            btnInsereEndereco = new Button();
+            cmbTipoEndereco = new ComboBox();
             label16 = new Label();
-            comboBox1 = new ComboBox();
+            cmbUf = new ComboBox();
             label15 = new Label();
             label14 = new Label();
             label13 = new Label();
@@ -70,9 +74,9 @@
             label10 = new Label();
             label9 = new Label();
             groupBox1.SuspendLayout();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            tabPage2.SuspendLayout();
+            tabpage1.SuspendLayout();
+            tabCliente.SuspendLayout();
+            tabEndereco.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -116,13 +120,6 @@
             label3.Size = new Size(28, 15);
             label3.TabIndex = 4;
             label3.Text = "CPF";
-            // 
-            // txtCpf
-            // 
-            txtCpf.Location = new Point(41, 81);
-            txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(113, 23);
-            txtCpf.TabIndex = 5;
             // 
             // txtTelefone
             // 
@@ -239,7 +236,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(tabControl1);
+            groupBox1.Controls.Add(tabpage1);
             groupBox1.Location = new Point(76, 42);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(960, 518);
@@ -247,81 +244,129 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
-            // tabControl1
+            // tabpage1
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(19, 22);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(935, 475);
-            tabControl1.TabIndex = 0;
-            tabControl1.Tag = "";
+            tabpage1.Controls.Add(tabCliente);
+            tabpage1.Controls.Add(tabEndereco);
+            tabpage1.Location = new Point(19, 22);
+            tabpage1.Name = "tabpage1";
+            tabpage1.SelectedIndex = 0;
+            tabpage1.Size = new Size(935, 475);
+            tabpage1.TabIndex = 0;
+            tabpage1.Tag = "";
             // 
-            // tabPage1
+            // tabCliente
             // 
-            tabPage1.Controls.Add(txtID);
-            tabPage1.Controls.Add(dtpCadastro);
-            tabPage1.Controls.Add(label3);
-            tabPage1.Controls.Add(btnArquivar);
-            tabPage1.Controls.Add(dtpNascimento);
-            tabPage1.Controls.Add(btnRestaurar);
-            tabPage1.Controls.Add(label5);
-            tabPage1.Controls.Add(txtTelefone);
-            tabPage1.Controls.Add(label1);
-            tabPage1.Controls.Add(txtCpf);
-            tabPage1.Controls.Add(txtEmail);
-            tabPage1.Controls.Add(btnEditar);
-            tabPage1.Controls.Add(label7);
-            tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(chkAtivo);
-            tabPage1.Controls.Add(label4);
-            tabPage1.Controls.Add(txtNome);
-            tabPage1.Controls.Add(label6);
-            tabPage1.Controls.Add(btnConfirma);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(927, 447);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Dados Cliente";
-            tabPage1.UseVisualStyleBackColor = true;
-            tabPage1.Click += tabPage1_Click;
+            tabCliente.Controls.Add(btnIREndereco);
+            tabCliente.Controls.Add(txtID);
+            tabCliente.Controls.Add(dtpCadastro);
+            tabCliente.Controls.Add(label3);
+            tabCliente.Controls.Add(btnArquivar);
+            tabCliente.Controls.Add(dtpNascimento);
+            tabCliente.Controls.Add(btnRestaurar);
+            tabCliente.Controls.Add(label5);
+            tabCliente.Controls.Add(txtTelefone);
+            tabCliente.Controls.Add(label1);
+            tabCliente.Controls.Add(txtCpf);
+            tabCliente.Controls.Add(txtEmail);
+            tabCliente.Controls.Add(btnEditar);
+            tabCliente.Controls.Add(label7);
+            tabCliente.Controls.Add(label2);
+            tabCliente.Controls.Add(chkAtivo);
+            tabCliente.Controls.Add(label4);
+            tabCliente.Controls.Add(txtNome);
+            tabCliente.Controls.Add(label6);
+            tabCliente.Controls.Add(btnConfirma);
+            tabCliente.Location = new Point(4, 24);
+            tabCliente.Name = "tabCliente";
+            tabCliente.Padding = new Padding(3);
+            tabCliente.Size = new Size(927, 447);
+            tabCliente.TabIndex = 0;
+            tabCliente.Text = "Dados Cliente";
+            tabCliente.UseVisualStyleBackColor = true;
+            tabCliente.Click += tabPage1_Click;
             // 
-            // tabPage2
+            // btnIREndereco
             // 
-            tabPage2.Controls.Add(textBox1);
-            tabPage2.Controls.Add(txtBairro);
-            tabPage2.Controls.Add(txtComplemento);
-            tabPage2.Controls.Add(txtNumero);
-            tabPage2.Controls.Add(txtLogradouro);
-            tabPage2.Controls.Add(txtCep);
-            tabPage2.Controls.Add(button2);
-            tabPage2.Controls.Add(button1);
-            tabPage2.Controls.Add(comboBox2);
-            tabPage2.Controls.Add(label16);
-            tabPage2.Controls.Add(comboBox1);
-            tabPage2.Controls.Add(label15);
-            tabPage2.Controls.Add(label14);
-            tabPage2.Controls.Add(label13);
-            tabPage2.Controls.Add(label12);
-            tabPage2.Controls.Add(label11);
-            tabPage2.Controls.Add(label10);
-            tabPage2.Controls.Add(label9);
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(927, 447);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Enderecos";
-            tabPage2.UseVisualStyleBackColor = true;
+            btnIREndereco.Location = new Point(41, 372);
+            btnIREndereco.Name = "btnIREndereco";
+            btnIREndereco.Size = new Size(99, 44);
+            btnIREndereco.TabIndex = 19;
+            btnIREndereco.Text = "Add endereço";
+            btnIREndereco.UseVisualStyleBackColor = true;
+            btnIREndereco.Click += btnIREndereco_Click;
             // 
-            // textBox1
+            // txtCpf
             // 
-            textBox1.Location = new Point(73, 197);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(358, 23);
-            textBox1.TabIndex = 26;
+            txtCpf.Location = new Point(41, 81);
+            txtCpf.Name = "txtCpf";
+            txtCpf.Size = new Size(113, 23);
+            txtCpf.TabIndex = 5;
+            // 
+            // tabEndereco
+            // 
+            tabEndereco.Controls.Add(btnEscolherCliente);
+            tabEndereco.Controls.Add(txtIDCliente);
+            tabEndereco.Controls.Add(label17);
+            tabEndereco.Controls.Add(txtCidade);
+            tabEndereco.Controls.Add(txtBairro);
+            tabEndereco.Controls.Add(txtComplemento);
+            tabEndereco.Controls.Add(txtNumero);
+            tabEndereco.Controls.Add(txtLogradouro);
+            tabEndereco.Controls.Add(txtCep);
+            tabEndereco.Controls.Add(button2);
+            tabEndereco.Controls.Add(btnInsereEndereco);
+            tabEndereco.Controls.Add(cmbTipoEndereco);
+            tabEndereco.Controls.Add(label16);
+            tabEndereco.Controls.Add(cmbUf);
+            tabEndereco.Controls.Add(label15);
+            tabEndereco.Controls.Add(label14);
+            tabEndereco.Controls.Add(label13);
+            tabEndereco.Controls.Add(label12);
+            tabEndereco.Controls.Add(label11);
+            tabEndereco.Controls.Add(label10);
+            tabEndereco.Controls.Add(label9);
+            tabEndereco.Location = new Point(4, 24);
+            tabEndereco.Name = "tabEndereco";
+            tabEndereco.Padding = new Padding(3);
+            tabEndereco.Size = new Size(927, 447);
+            tabEndereco.TabIndex = 1;
+            tabEndereco.Text = "Enderecos";
+            tabEndereco.UseVisualStyleBackColor = true;
+            // 
+            // btnEscolherCliente
+            // 
+            btnEscolherCliente.Location = new Point(342, 312);
+            btnEscolherCliente.Name = "btnEscolherCliente";
+            btnEscolherCliente.Size = new Size(75, 23);
+            btnEscolherCliente.TabIndex = 29;
+            btnEscolherCliente.Text = "button1";
+            btnEscolherCliente.UseVisualStyleBackColor = true;
+            btnEscolherCliente.Click += btnEscolherCliente_Click_1;
+            // 
+            // txtIDCliente
+            // 
+            txtIDCliente.Location = new Point(71, 38);
+            txtIDCliente.Name = "txtIDCliente";
+            txtIDCliente.ReadOnly = true;
+            txtIDCliente.Size = new Size(100, 23);
+            txtIDCliente.TabIndex = 28;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(73, 20);
+            label17.Name = "label17";
+            label17.Size = new Size(18, 15);
+            label17.TabIndex = 27;
+            label17.Text = "ID";
+            // 
+            // txtCidade
+            // 
+            txtCidade.Location = new Point(73, 197);
+            txtCidade.Name = "txtCidade";
+            txtCidade.Size = new Size(358, 23);
+            txtCidade.TabIndex = 26;
             // 
             // txtBairro
             // 
@@ -367,24 +412,25 @@
             button2.Text = "&Cancelar";
             button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnInsereEndereco
             // 
-            button1.Location = new Point(71, 308);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 31);
-            button1.TabIndex = 19;
-            button1.Text = "&Inserir";
-            button1.UseVisualStyleBackColor = true;
+            btnInsereEndereco.Location = new Point(71, 308);
+            btnInsereEndereco.Name = "btnInsereEndereco";
+            btnInsereEndereco.Size = new Size(101, 31);
+            btnInsereEndereco.TabIndex = 19;
+            btnInsereEndereco.Text = "&Inserir";
+            btnInsereEndereco.UseVisualStyleBackColor = true;
+            btnInsereEndereco.Click += btnInsereEndereco_Click;
             // 
-            // comboBox2
+            // cmbTipoEndereco
             // 
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Residencial", "Corporativo" });
-            comboBox2.Location = new Point(207, 258);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 11;
+            cmbTipoEndereco.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTipoEndereco.FormattingEnabled = true;
+            cmbTipoEndereco.Items.AddRange(new object[] { "Residencial", "Corporativo" });
+            cmbTipoEndereco.Location = new Point(207, 258);
+            cmbTipoEndereco.Name = "cmbTipoEndereco";
+            cmbTipoEndereco.Size = new Size(121, 23);
+            cmbTipoEndereco.TabIndex = 11;
             // 
             // label16
             // 
@@ -395,15 +441,15 @@
             label16.TabIndex = 10;
             label16.Text = "Tipo de Endereço";
             // 
-            // comboBox1
+            // cmbUf
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO" });
-            comboBox1.Location = new Point(71, 258);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 9;
+            cmbUf.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbUf.FormattingEnabled = true;
+            cmbUf.Items.AddRange(new object[] { "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO" });
+            cmbUf.Location = new Point(71, 258);
+            cmbUf.Name = "cmbUf";
+            cmbUf.Size = new Size(121, 23);
+            cmbUf.TabIndex = 9;
             // 
             // label15
             // 
@@ -477,11 +523,11 @@
             Name = "FrmClientes";
             Text = "FrmClientes";
             groupBox1.ResumeLayout(false);
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
+            tabpage1.ResumeLayout(false);
+            tabCliente.ResumeLayout(false);
+            tabCliente.PerformLayout();
+            tabEndereco.ResumeLayout(false);
+            tabEndereco.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -492,7 +538,6 @@
         private TextBox txtID;
         private TextBox txtNome;
         private Label label3;
-        private TextBox txtCpf;
         private TextBox txtTelefone;
         private Label label4;
         private Label label5;
@@ -507,9 +552,9 @@
         private DateTimePicker dtpNascimento;
         private DateTimePicker dtpCadastro;
         private GroupBox groupBox1;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
+        private TabControl tabpage1;
+        private TabPage tabCliente;
+        private TabPage tabEndereco;
         private Label label14;
         private Label label13;
         private Label label12;
@@ -517,23 +562,28 @@
         private Label label10;
         private Label label9;
         private Label label8;
-        private ComboBox comboBox1;
+        private ComboBox cmbUf;
         private Label label15;
         private Label label16;
         private Button button2;
-        private Button button1;
+        private Button btnInsereEndereco;
         private TextBox textBox7;
         private TextBox textBox6;
         private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
         private TextBox textBox2;
-        private TextBox textBox1;
-        private ComboBox comboBox2;
+        private TextBox txtCidade;
+        private ComboBox cmbTipoEndereco;
         private TextBox txtCep;
         private TextBox txtLogradouro;
         private TextBox txtBairro;
         private TextBox txtComplemento;
         private TextBox txtNumero;
+        private TextBox txtIDCliente;
+        private Label label17;
+        private TextBox txtCpf;
+        private Button btnEscolherCliente;
+        private Button btnIREndereco;
     }
 }

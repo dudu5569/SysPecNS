@@ -490,9 +490,9 @@ DELIMITER ;
 
 DELIMITER $$
 USE `syspecdb`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_pedido_update`(spid int,spusuario_id int, spcliente_id int, spstatus char(1), spdesconto decimal(10,2))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_pedido_update`(spid int, spstatus char(1), spdesconto decimal(10,2))
 begin
-	update pedidos set usuario_id = spusuario_id, cliente_id = spcliente_id, status = spstatus, desconto = spdesconto
+	update pedidos set status = spstatus, desconto = spdesconto
     where id = spid;
 end$$
 

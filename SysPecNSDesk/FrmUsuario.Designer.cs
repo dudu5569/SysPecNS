@@ -250,6 +250,7 @@
             btnEditar.Text = "&Editar";
             btnEditar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnDeletar
             // 

@@ -11,10 +11,10 @@ namespace SysPecNSLib
     public class Endereco
     {
         public int Id { get; set; }
-        public Cliente? Cliente { get; set; }
+        public Cliente Cliente { get; set; }
         public string? Cep { get; set; }
         public string? Logradouro { get; set; }
-        public int? Numero { get; set; }
+        public string? Numero { get; set; }
         public string? Complemento { get; set; }
         public string? Bairro { get; set; }
         public string? Cidade { get; set; }
@@ -27,46 +27,10 @@ namespace SysPecNSLib
             Cliente = new();
         }
 
-        public Endereco(string? cep, string? logradouro, int? numero, string? complemento,
-            string? cidade, string? bairro)
-        {
-            Cep = cep;
-            Logradouro = logradouro;
-            Numero = numero;
-            Complemento = complemento;
-            Cidade = cidade;
-            Bairro = bairro;
-        }
-        public Endereco(string? cep, int? numero, string? complemento,
-            string? cidade, string? bairro)
-        {
-            Cep = cep;
-            Numero = numero;
-            Complemento = complemento;
-            Cidade = cidade;
-            Bairro = bairro;
-        }
 
-        public Endereco(string? cep, string? logradouro, int? numero,
-            string? cidade, string? bairro)
-        {
-            Cep = cep;
-            Logradouro = logradouro;
-            Numero = numero;
-            Cidade = cidade;
-            Bairro = bairro;
-        }
+ 
 
-        public Endereco(string? cep, int? numero, 
-            string? cidade, string? bairro)
-        {
-            Cep = cep;
-            Numero = numero;
-            Cidade = cidade;
-            Bairro = bairro;
-        }
-
-        public Endereco(Cliente cliente, string? cep, string? logradouro, int? numero, string? complemento,
+        public Endereco(Cliente cliente, string? cep, string? logradouro, string? numero, string? complemento,
              string? cidade, string? bairro)
         {
             Cliente = cliente;
@@ -78,7 +42,7 @@ namespace SysPecNSLib
             Bairro = bairro;
         }
 
-        public Endereco(Cliente cliente, string? cep, int? numero, string? complemento,
+        public Endereco(Cliente cliente, string? cep, string? numero, string? complemento,
             string? cidade, string? bairro)
         {
             Cliente = cliente;
@@ -89,18 +53,7 @@ namespace SysPecNSLib
             Bairro = bairro;
         }
 
-        public Endereco(Cliente cliente, string? cep, string? logradouro, int? numero,
-             string? cidade, string? bairro)
-        {
-            Cliente = cliente;
-            Cep = cep;
-            Logradouro = logradouro;
-            Numero = numero;
-            Cidade = cidade;
-            Bairro = bairro;
-        }
-
-        public Endereco(Cliente cliente, string? cep, int? numero,
+        public Endereco(Cliente cliente, string? cep, string? numero,
             string? cidade, string? bairro)
         {
             Cliente = cliente;
@@ -110,12 +63,25 @@ namespace SysPecNSLib
             Bairro = bairro;
         }
 
+        public Endereco(Cliente cliente, string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipo_Endereco)
+        {
+            Cliente = cliente;
+            Cep = cep;
+            Logradouro = logradouro;
+            Numero = numero;
+            Complemento = complemento;
+            Bairro = bairro;
+            Cidade = cidade;
+            Uf = uf;
+            Tipo_Endereco = tipo_Endereco;
+        }
 
         public void Inserir()
         {
             var command = Banco.Abrir();
             command.CommandType = CommandType.StoredProcedure;
             command.CommandText = "sp_endereco_insert";
+            command.Parameters.AddWithValue("spcliente_id", Cliente.Id);
             command.Parameters.AddWithValue("spcep", Cep);
             command.Parameters.AddWithValue("splogradouro", Logradouro);
             command.Parameters.AddWithValue("spnumero", Numero);
@@ -144,22 +110,15 @@ namespace SysPecNSLib
                     Cliente.ObterPorId(dr.GetInt32(0)),
                     dr.GetString(1),
                     dr.GetString(2),
-                    dr.GetInt32(3),
+                    dr.GetString(3),
                     dr.GetString(4),
                     dr.GetString(5),
-                    dr.GetString(6)
+                    dr.GetString(6),
+                    dr.GetString(7),
+                    dr.GetString(8)
                     );
             }
-
             return endereco;
         }
-
-
-
-
-
     }
-
-    
-
 }
