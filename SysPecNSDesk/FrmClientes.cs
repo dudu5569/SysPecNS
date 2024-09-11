@@ -41,7 +41,6 @@ namespace SysPecNSDesk
                 txtTelefone.Clear();
 
                 txtIdCliente.Text = cliente.Id.ToString();
-                tabPage2.Show();
             }
         }
 
@@ -58,20 +57,26 @@ namespace SysPecNSDesk
         private void btnInsereEndereco_Click(object sender, EventArgs e)
         {
             Endereco endereco = new(
-                Cliente.ObterPorId(Convert.ToInt32(txtID.Text)),
-                txtCep.Text,
-                txtLogradouro.Text,
-                Convert.ToInt32(txtNumero.Text),
-                txtComplemento.Text,
-                txtCidade.Text,
-                txtBairro.Text
-                );
-                endereco.Inserir();
+            Convert.ToInt32(txtIdCliente.Text),
+            txtCep.Text,
+            txtLogradouro.Text,
+            txtNumero.Text,
+            txtComplemento.Text,
+            txtCidade.Text,
+            txtBairro.Text
+            );
+            endereco.Inserir();
 
-                if (endereco.Id > 0)
-                {
-                    MessageBox.Show("Endereço adicionado com sucesso!");
-                }
+            if (endereco.Id > 0)
+            {
+                MessageBox.Show("Endereço adicionado com sucesso!");
+            }
+        }
+
+        private void btnEscolherCliente_Click(object sender, EventArgs e)
+        {
+            txtIdCliente.ReadOnly = false;
+            txtIdCliente.Clear();
         }
     }
 }

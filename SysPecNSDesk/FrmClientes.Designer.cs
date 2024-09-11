@@ -51,6 +51,7 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            btnEscolherCliente = new Button();
             txtIdCliente = new TextBox();
             label17 = new Label();
             txtCidade = new TextBox();
@@ -292,6 +293,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnEscolherCliente);
             tabPage2.Controls.Add(txtIdCliente);
             tabPage2.Controls.Add(label17);
             tabPage2.Controls.Add(txtCidade);
@@ -320,10 +322,21 @@
             tabPage2.Text = "Enderecos";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnEscolherCliente
+            // 
+            btnEscolherCliente.Location = new Point(328, 300);
+            btnEscolherCliente.Name = "btnEscolherCliente";
+            btnEscolherCliente.Size = new Size(89, 46);
+            btnEscolherCliente.TabIndex = 29;
+            btnEscolherCliente.Text = "Escolher Cliente";
+            btnEscolherCliente.UseVisualStyleBackColor = true;
+            btnEscolherCliente.Click += btnEscolherCliente_Click;
+            // 
             // txtIdCliente
             // 
             txtIdCliente.Location = new Point(71, 31);
             txtIdCliente.Name = "txtIdCliente";
+            txtIdCliente.ReadOnly = true;
             txtIdCliente.Size = new Size(100, 23);
             txtIdCliente.TabIndex = 28;
             txtIdCliente.TextChanged += txtIdCliente_TextChanged;
@@ -402,7 +415,7 @@
             // 
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Residencial", "Corporativo" });
+            comboBox2.Items.AddRange(new object[] { "RES", "COR" });
             comboBox2.Location = new Point(207, 258);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(121, 23);
@@ -559,5 +572,6 @@
         private TextBox txtNumero;
         private TextBox txtIdCliente;
         private Label label17;
+        private Button btnEscolherCliente;
     }
 }
