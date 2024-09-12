@@ -84,6 +84,7 @@ namespace SysPecNSDesk
                 double.Parse(txtQuantidade.Text),
                 double.Parse(txtDescontoItem.Text)
                 ); 
+            item.Insert();
 
             produto = new();
             txtDescontoItem.Text = "0";
@@ -107,7 +108,7 @@ namespace SysPecNSDesk
             foreach(var item in itens)
             {
                 dgvItensPedido.Rows.Add();
-                dgvItensPedido.Rows[linha].Cells[0].Value = $"#{linha + 1}";
+                dgvItensPedido.Rows[linha].Cells[0].Value = linha + 1;
                 dgvItensPedido.Rows[linha].Cells[1].Value = item.Produto.CodBar;
                 dgvItensPedido.Rows[linha].Cells[2].Value = item.Produto.Descricao;
                 dgvItensPedido.Rows[linha].Cells[3].Value = item.ValorUnit.ToString("#0.00");

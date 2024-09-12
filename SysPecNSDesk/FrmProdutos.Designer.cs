@@ -279,6 +279,7 @@
             dgvProdutos.ScrollBars = ScrollBars.Vertical;
             dgvProdutos.Size = new Size(711, 150);
             dgvProdutos.TabIndex = 2;
+            dgvProdutos.CellContentClick += dgvProdutos_CellContentClick;
             // 
             // clnId
             // 

@@ -47,7 +47,7 @@ namespace SysPecNSLib
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_itempedido_insert";
             cmd.Parameters.AddWithValue("sppedido_id", IdPedido);
-            cmd.Parameters.AddWithValue("spproduto", Produto.Id);
+            cmd.Parameters.AddWithValue("spproduto_id", Produto.Id);
             cmd.Parameters.AddWithValue("spquantidade", Quantidade);
             cmd.Parameters.AddWithValue("spdesconto", Desconto);
             Id = Convert.ToInt32(cmd.ExecuteScalar());
