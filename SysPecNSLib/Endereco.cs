@@ -28,34 +28,34 @@ namespace SysPecNSLib
         } 
 
 
-        public Endereco(string? cep, string? logradouro, string? numero, string? complemento,
-            string? cidade, string? bairro)
-        {
-            Cep = cep;
-            Logradouro = logradouro;
-            Numero = numero;
-            Complemento = complemento;
-            Cidade = cidade;
-            Bairro = bairro;
-        }
-        public Endereco(string? cep, string? numero, string? complemento,
-            string? cidade, string? bairro)
-        {
-            Cep = cep;
-            Numero = numero;
-            Complemento = complemento;
-            Cidade = cidade;
-            Bairro = bairro;
-        }
+        //public Endereco(string? cep, string? logradouro, string? numero, string? complemento,
+        //    string? cidade, string? bairro)
+        //{
+        //    Cep = cep;
+        //    Logradouro = logradouro;
+        //    Numero = numero;
+        //    Complemento = complemento;
+        //    Cidade = cidade;
+        //    Bairro = bairro;
+        //}
+        //public Endereco(string? cep, string? numero, string? complemento,
+        //    string? cidade, string? bairro)
+        //{
+        //    Cep = cep;
+        //    Numero = numero;
+        //    Complemento = complemento;
+        //    Cidade = cidade;
+        //    Bairro = bairro;
+        //}
 
-        public Endereco(string? cep, string? numero, 
-            string? cidade, string? bairro)
-        {
-            Cep = cep;
-            Numero = numero;
-            Cidade = cidade;
-            Bairro = bairro;
-        }
+        //public Endereco(string? cep, string? numero, 
+        //    string? cidade, string? bairro)
+        //{
+        //    Cep = cep;
+        //    Numero = numero;
+        //    Cidade = cidade;
+        //    Bairro = bairro;
+        //}
 
 
  
