@@ -39,7 +39,12 @@ namespace SysPecNSDesk
                 txtEmail.Clear();
                 txtCpf.Clear();
                 txtTelefone.Clear();
+
+
+                txtIdCliente.Text = cliente.Id.ToString();
+
                 txtIDCliente.Text = cliente.Id.ToString();
+
             }
         }
 
@@ -47,6 +52,13 @@ namespace SysPecNSDesk
         {
 
         }
+
+
+        private void txtIdCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void btnInsereEndereco_Click(object sender, EventArgs e)
         {
@@ -63,16 +75,17 @@ namespace SysPecNSDesk
                 );
             endereco.Inserir();
             if (endereco.Id > 0) MessageBox.Show("Endereço adicionado com sucesso!");
-            txtIDCliente.Clear();
+            else MessageBox.Show("Falha ao gravar endereço!");
             txtCep.Clear();
             txtNumero.Clear();
             txtCidade.Clear();
             txtBairro.Clear();
+
         }
 
         private void btnEscolherCliente_Click(object sender, EventArgs e)
         {
-
+            txtIDCliente.ReadOnly = false;
         }
 
         private void btnEscolherCliente_Click_1(object sender, EventArgs e)
@@ -83,6 +96,7 @@ namespace SysPecNSDesk
         private void btnIREndereco_Click(object sender, EventArgs e)
         {
             this.tabpage1.SelectedTab = tabEndereco;
+
         }
     }
 }

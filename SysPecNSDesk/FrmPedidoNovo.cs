@@ -115,8 +115,10 @@ namespace SysPecNSDesk
                 dgvItensPedido.Rows[linha].Cells[5].Value = item.Desconto;
                 dgvItensPedido.Rows[linha].Cells[6].Value = (item.ValorUnit * item.Quantidade - item.Desconto).ToString("#0.00");
                 linha++;
+
                 total += item.ValorUnit * item.Quantidade - item.Desconto;
                 desconto += item.Desconto;
+
             }
 
                 textBox1.Text = total.ToString("#0.00");

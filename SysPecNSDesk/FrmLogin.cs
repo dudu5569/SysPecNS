@@ -25,7 +25,7 @@ namespace SysPecNSDesk
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            if(txtEmail.Text != string.Empty && txtSenha.Text != string.Empty)
+            if (txtEmail.Text != string.Empty && txtSenha.Text != string.Empty)
             {
                 var usuario = Usuario.EfetuarLogin(txtEmail.Text, txtSenha.Text);
                 if (usuario.Id > 0 && usuario.Ativo)
@@ -49,11 +49,16 @@ namespace SysPecNSDesk
                 }//fim do if da verificação do id do usuário
 
             }
-            else 
+            else
             {
                 MessageBox.Show("Você deve preencher email e senha");
                 txtEmail.Focus();
             }
         }//fim evento click logar
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

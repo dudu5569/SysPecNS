@@ -47,6 +47,11 @@
             dtpNascimento = new DateTimePicker();
             dtpCadastro = new DateTimePicker();
             groupBox1 = new GroupBox();
+
+
+            btnEscolherCliente = new Button();
+            txtIdCliente = new TextBox();
+
             tabpage1 = new TabControl();
             tabCliente = new TabPage();
             btnIREndereco = new Button();
@@ -54,6 +59,7 @@
             tabEndereco = new TabPage();
             btnEscolherCliente = new Button();
             txtIDCliente = new TextBox();
+
 
             btnEscolherCliente = new Button();
             txtIdCliente = new TextBox();
@@ -68,9 +74,16 @@
             button2 = new Button();
             btnInsereEndereco = new Button();
 
+
             cmbTipoEndereco = new ComboBox();
 
             comboBox2 = new ComboBox();
+
+
+            comboBox2 = new ComboBox();
+
+            cmbTipoEndereco = new ComboBox();
+
 
             label16 = new Label();
             cmbUf = new ComboBox();
@@ -252,6 +265,30 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
+
+            // tabControl1
+            // 
+
+            // 
+            // btnEscolherCliente
+            // 
+            btnEscolherCliente.Location = new Point(328, 300);
+            btnEscolherCliente.Name = "btnEscolherCliente";
+            btnEscolherCliente.Size = new Size(89, 46);
+            btnEscolherCliente.TabIndex = 29;
+            btnEscolherCliente.Text = "Escolher Cliente";
+            btnEscolherCliente.UseVisualStyleBackColor = true;
+            btnEscolherCliente.Click += btnEscolherCliente_Click;
+            // 
+            // txtIdCliente
+            // 
+            txtIdCliente.Location = new Point(71, 31);
+            txtIdCliente.Name = "txtIdCliente";
+            txtIdCliente.ReadOnly = true;
+            txtIdCliente.Size = new Size(100, 23);
+            txtIdCliente.TabIndex = 28;
+            txtIdCliente.TextChanged += txtIdCliente_TextChanged;
+
             // tabpage1
             // 
             tabpage1.Controls.Add(tabCliente);
@@ -361,6 +398,7 @@
             txtIDCliente.Size = new Size(100, 23);
             txtIDCliente.TabIndex = 28;
 
+
             // 
             // btnEscolherCliente
             // 
@@ -375,14 +413,22 @@
             // txtIdCliente
             // 
 
+
             // 
             // label17
             // 
             label17.AutoSize = true;
 
+
             label17.Location = new Point(73, 20);
 
             label17.Location = new Point(78, 13);
+
+
+            label17.Location = new Point(78, 13);
+
+            label17.Location = new Point(73, 20);
+
 
             label17.Name = "label17";
             label17.Size = new Size(18, 15);
@@ -452,6 +498,16 @@
             // 
             // cmbTipoEndereco
             // 
+
+
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "RES", "COR" });
+            comboBox2.Location = new Point(207, 258);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 11;
+
 
             cmbTipoEndereco.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipoEndereco.FormattingEnabled = true;
@@ -605,9 +661,13 @@
         private TextBox textBox2;
         private TextBox txtCidade;
 
+
         private ComboBox cmbTipoEndereco;
 
         private ComboBox comboBox2;
+
+
+
 
         private TextBox txtCep;
         private TextBox txtLogradouro;
@@ -615,13 +675,16 @@
         private TextBox txtComplemento;
         private TextBox txtNumero;
 
-        private TextBox txtIDCliente;
+        private TextBox txtIdCliente;
         private Label label17;
-        private TextBox txtCpf;
         private Button btnEscolherCliente;
+
+        private TextBox txtIDCliente;
+
+        private TextBox txtCpf;
+
         private Button btnIREndereco;
 
-        private TextBox txtIdCliente;
 
 
     }
