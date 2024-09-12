@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -28,7 +28,38 @@ namespace SysPecNSLib
         }
 
 
+        public Endereco(string? cep, string? logradouro, string? numero, string? complemento,
+            string? cidade, string? bairro)
+        {
+            Cep = cep;
+            Logradouro = logradouro;
+            Numero = numero;
+            Complemento = complemento;
+            Cidade = cidade;
+            Bairro = bairro;
+        }
+        public Endereco(string? cep, string? numero, string? complemento,
+            string? cidade, string? bairro)
+        {
+            Cep = cep;
+            Numero = numero;
+            Complemento = complemento;
+            Cidade = cidade;
+            Bairro = bairro;
+        }
+
+        public Endereco(string? cep, string? numero, 
+            string? cidade, string? bairro)
+        {
+            Cep = cep;
+            Numero = numero;
+            Cidade = cidade;
+            Bairro = bairro;
+        }
+
+
  
+
 
         public Endereco(Cliente cliente, string? cep, string? logradouro, string? numero, string? complemento,
              string? cidade, string? bairro)
@@ -55,6 +86,7 @@ namespace SysPecNSLib
 
         public Endereco(Cliente cliente, string? cep, string? numero,
             string? cidade, string? bairro)
+
         {
             Cliente = cliente;
             Cep = cep;
@@ -64,6 +96,7 @@ namespace SysPecNSLib
         }
 
         public Endereco(Cliente cliente, string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipo_Endereco)
+
         {
             Cliente = cliente;
             Cep = cep;
@@ -75,6 +108,7 @@ namespace SysPecNSLib
             Uf = uf;
             Tipo_Endereco = tipo_Endereco;
         }
+
 
         public void Inserir()
         {
