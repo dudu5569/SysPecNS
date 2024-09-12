@@ -40,7 +40,11 @@ namespace SysPecNSDesk
                 txtCpf.Clear();
                 txtTelefone.Clear();
 
+
                 txtIdCliente.Text = cliente.Id.ToString();
+
+                txtIDCliente.Text = cliente.Id.ToString();
+
             }
         }
 
@@ -48,6 +52,7 @@ namespace SysPecNSDesk
         {
 
         }
+
 
         private void txtIdCliente_TextChanged(object sender, EventArgs e)
         {
@@ -71,12 +76,48 @@ namespace SysPecNSDesk
             {
                 MessageBox.Show("Endereço adicionado com sucesso!");
             }
+
+        private void btnInsereEndereco_Click(object sender, EventArgs e)
+        {
+            Endereco endereco = new(
+                Cliente.ObterPorId(int.Parse(txtIDCliente.Text)),
+                txtCep.Text,
+                txtLogradouro.Text,
+                txtNumero.Text,
+                txtComplemento.Text,
+                txtBairro.Text,
+                txtCidade.Text,
+                cmbUf.Text,
+                cmbTipoEndereco.Text
+                );
+            endereco.Inserir();
+            if (endereco.Id > 0) MessageBox.Show("Endereço adicionado com sucesso!");
+            txtIDCliente.Clear();
+            txtCep.Clear();
+            txtNumero.Clear();
+            txtCidade.Clear();
+            txtBairro.Clear();
+
         }
 
         private void btnEscolherCliente_Click(object sender, EventArgs e)
         {
+
             txtIdCliente.ReadOnly = false;
             txtIdCliente.Clear();
+
+
+        }
+
+        private void btnEscolherCliente_Click_1(object sender, EventArgs e)
+        {
+            // txtID = int.Parse(txtID.Text);
+        }
+
+        private void btnIREndereco_Click(object sender, EventArgs e)
+        {
+            this.tabpage1.SelectedTab = tabEndereco;
+
         }
     }
 }
