@@ -25,7 +25,7 @@ namespace SysPecNSLib
         public Endereco()
         {
             Cliente = new();
-        }
+        } 
 
 
  
