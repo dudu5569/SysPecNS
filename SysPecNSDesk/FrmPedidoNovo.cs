@@ -95,7 +95,6 @@ namespace SysPecNSDesk
             txtCodBarras.Focus();
 
             PreencherGridItens();
-
         }
 
         private void PreencherGridItens()
