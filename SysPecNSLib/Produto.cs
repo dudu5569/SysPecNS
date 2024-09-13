@@ -202,7 +202,7 @@ namespace SysPecNSLib
                     dr.GetDouble(0)
                     );
             }
-            return estoque;
+            return estoque; 
         }
 
 
