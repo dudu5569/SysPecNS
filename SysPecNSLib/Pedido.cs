@@ -19,6 +19,8 @@ namespace SysPecNSLib
         public double Desconto { get; set; }
         public List<ItemPedido> Itens { get; set; }
 
+
+        //metodos construtores
         public Pedido() { }
         public Pedido( Usuario usuario, Cliente cliente, DateTime data, string status, double desconto)
         {
@@ -57,6 +59,8 @@ namespace SysPecNSLib
             Itens = itens;
         }
 
+
+        //método inserir usando stored procedure
         public void Inserir()
         {
             var cmd = Banco.Abrir();
@@ -67,6 +71,7 @@ namespace SysPecNSLib
             Id = Convert.ToInt32(cmd.ExecuteScalar());
         }
 
+        //atualizar status da compra, faz um update no banco de dados
         public void AlterarStatus()
         {
             var cmd = Banco.Abrir();
@@ -75,6 +80,7 @@ namespace SysPecNSLib
             cmd.ExecuteNonQuery();
         }
 
+        //metodo para atualizar o desconto
         public void AtualizarDesconto()
         {
             var cmd = Banco.Abrir();
@@ -82,6 +88,8 @@ namespace SysPecNSLib
             cmd.CommandText = $"update pedidos set desconto = {Desconto} where id = {Id}";
             cmd.ExecuteNonQuery();
         }
+
+        //método para obter por id, pode ser usado para obter um id de um pedido
 
         public static Pedido ObterPorID(int id)
         {
@@ -106,7 +114,7 @@ namespace SysPecNSLib
             }
             return pedido;
         }
-
+        //obter lista de um pedido
         public static List<Pedido> ObterPorListaPorCLiente(int id)
         {
             List<Pedido> pedidos = new();
@@ -133,6 +141,8 @@ namespace SysPecNSLib
             
             return pedidos;
         }
+
+        //Obter pedido por usuario
 
         public static List<Pedido> ObterListaPorUsuario(int id)
         {

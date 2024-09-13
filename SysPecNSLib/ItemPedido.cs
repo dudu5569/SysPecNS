@@ -18,7 +18,7 @@ namespace SysPecNSLib
         public double Desconto { get; set; }
 
         public ItemPedido() { }
-
+        // métodos construtores
 
         public ItemPedido(int idPedido, Produto produto, double valorUnit, double quantidade, double desconto)
         {
@@ -40,7 +40,7 @@ namespace SysPecNSLib
         }
         // `sp_itempedido_insert`(sppedido_id int, spproduto_id int, spquantidade decimal (10,2), spdesconto decimal(10,2))
 
-
+        //método para inserir produtos
         public void Insert()
         {
             var cmd = Banco.Abrir();
@@ -53,6 +53,8 @@ namespace SysPecNSLib
             Id = Convert.ToInt32(cmd.ExecuteScalar());
 
         }
+
+        //listar por pedidos, método para listar os pedidos
 
         public static List<ItemPedido> ObterListaPorPedido(int id)
         {
@@ -75,7 +77,7 @@ namespace SysPecNSLib
             return Itens;
         }
 
-
+        //método para atualizar o pedido, como quantidade e desconto
         public void Atualizar()
         {
             var cmd = Banco.Abrir();
