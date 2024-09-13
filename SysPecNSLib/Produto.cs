@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,12 @@ namespace SysPecNSLib
 
 
         public Produto(){}
+
+        public Produto(string codbar, double estoqueMinimo)
+        {
+            CodBar = codbar;
+            EstoqueMinimo = estoqueMinimo;
+        }
 
         public Produto(string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? categoria, double estoqueMinimo, double classeDesconto)
         {
@@ -71,6 +78,12 @@ namespace SysPecNSLib
             Imagem = imagem;
             DataCad = dataCad;
         }
+
+        public Produto(double estoqueMinimo)
+        {
+            EstoqueMinimo = estoqueMinimo;
+        }
+
         public void Inserir()
         {
             var cmd = Banco.Abrir();
@@ -176,6 +189,33 @@ namespace SysPecNSLib
             return produtos;
         }
 
+        public static Produto DescontarQuantidade(int codbar)
+        {
+            Produto estoque = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"select estoque_minimo from produtos where cod_barras = {codbar}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                estoque = new(
+                    dr.GetDouble(0)
+                    );
+            }
+            return estoque;
+        }
+
+
+        public static Produto Desconto_estoque(int estoque_restante, int codbar)
+        {
+            Produto estoque_restou = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"update produtos set estoque_minimo = {estoque_restante} where cod_barras = {codbar} ";
+            var dr = cmd.ExecuteNonQuery();
+            return estoque_restou;
+            
+        }
 
     }
 }

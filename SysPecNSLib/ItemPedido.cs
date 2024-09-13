@@ -89,6 +89,5 @@ namespace SysPecNSLib
             cmd.ExecuteNonQuery();
         } // `sp_itempedido_update`(spid int,spquantidade decimal(10,2), spdesconto decimal(10,2))
 
-
     }
 }

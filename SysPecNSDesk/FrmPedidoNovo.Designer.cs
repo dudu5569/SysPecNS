@@ -410,6 +410,7 @@
             btnFechar.TabIndex = 0;
             btnFechar.Text = "&Finalizar";
             btnFechar.UseVisualStyleBackColor = true;
+            btnFechar.Click += btnFechar_Click;
             // 
             // txtSubTotal
             // 

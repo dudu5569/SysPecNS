@@ -39,11 +39,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(261, 58);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(316, 87);
             label1.Name = "label1";
-            label1.Size = new Size(114, 15);
+            label1.Size = new Size(105, 32);
             label1.TabIndex = 0;
-            label1.Text = "Controle de Estoque";
+            label1.Text = "Estoque";
             // 
             // dgvEstoque
             // 
@@ -55,9 +56,10 @@
             dgvEstoque.Name = "dgvEstoque";
             dgvEstoque.ReadOnly = true;
             dgvEstoque.RowHeadersVisible = false;
+            dgvEstoque.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEstoque.Size = new Size(603, 251);
             dgvEstoque.TabIndex = 1;
-            dgvEstoque.CellContentClick += dgvEstoque_CellContentClick;
+            dgvEstoque.CellClick += dgvEstoque_CellClick;
             // 
             // clnIdProduto
             // 
@@ -93,6 +95,7 @@
             Controls.Add(label1);
             Name = "FrmEstoque";
             Text = "FrmEstoque";
+            Load += FrmEstoque_Load;
             ((System.ComponentModel.ISupportInitialize)dgvEstoque).EndInit();
             ResumeLayout(false);
             PerformLayout();

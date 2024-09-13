@@ -77,13 +77,13 @@ namespace SysPecNSDesk
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            ItemPedido item = new( 
+            ItemPedido item = new(
                 int.Parse(txtIdPedido.Text),
                 produto,
                 produto.ValorUnit,
                 double.Parse(txtQuantidade.Text),
                 double.Parse(txtDescontoItem.Text)
-                ); 
+                );
             item.Insert();
 
             produto = new();
@@ -104,14 +104,14 @@ namespace SysPecNSDesk
             int linha = 0;
             double total = 0;
             double desconto = 0;
-            foreach(var item in itens)
+            foreach (var item in itens)
             {
                 dgvItensPedido.Rows.Add();
                 dgvItensPedido.Rows[linha].Cells[0].Value = linha + 1;
                 dgvItensPedido.Rows[linha].Cells[1].Value = item.Produto.CodBar;
                 dgvItensPedido.Rows[linha].Cells[2].Value = item.Produto.Descricao;
                 dgvItensPedido.Rows[linha].Cells[3].Value = item.ValorUnit.ToString("#0.00");
-                dgvItensPedido.Rows[linha].Cells[4].Value = item.Quantidade.ToString("#0.000");
+                dgvItensPedido.Rows[linha].Cells[4].Value = item.Quantidade;
                 dgvItensPedido.Rows[linha].Cells[5].Value = item.Desconto;
                 dgvItensPedido.Rows[linha].Cells[6].Value = (item.ValorUnit * item.Quantidade - item.Desconto).ToString("#0.00");
                 linha++;
@@ -119,10 +119,33 @@ namespace SysPecNSDesk
                 total += item.ValorUnit * item.Quantidade - item.Desconto;
                 desconto += item.Desconto;
 
+
             }
 
-                textBox1.Text = total.ToString("#0.00");
+            textBox1.Text = total.ToString("#0.00");
             txtDescontoItens.Text = desconto.ToString("#0.00");
+
+
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            string estoque = "";
+            int estoque_restante = 0;
+            
+
+                estoque = (item.Produto.EstoqueMinimo.ToString());
+
+                estoque_restante = int.Parse(estoque) - Convert.ToInt32(item.Quantidade);
+                if (estoque_restante <= 0)
+                {
+                    MessageBox.Show("Quantidade indisponível no estoque");
+                }
+                else
+                {
+                    Produto.Desconto_estoque(estoque_restante, int.Parse(item.Produto.CodBar));
+                }
+
         }
     }
 }

@@ -43,6 +43,7 @@
             pedidosToolStripMenuItem = new ToolStripMenuItem();
             novoToolStripMenuItem3 = new ToolStripMenuItem();
             listaToolStripMenuItem1 = new ToolStripMenuItem();
+            estoqueToolStripMenuItem = new ToolStripMenuItem();
             operaçãoToolStripMenuItem1 = new ToolStripMenuItem();
             caizaToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
@@ -125,7 +126,7 @@
             // 
             // operaçãoToolStripMenuItem
             // 
-            operaçãoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pedidosToolStripMenuItem });
+            operaçãoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pedidosToolStripMenuItem, estoqueToolStripMenuItem });
             operaçãoToolStripMenuItem.Name = "operaçãoToolStripMenuItem";
             operaçãoToolStripMenuItem.Size = new Size(81, 20);
             operaçãoToolStripMenuItem.Text = "&Movimento";
@@ -141,15 +142,22 @@
             // novoToolStripMenuItem3
             // 
             novoToolStripMenuItem3.Name = "novoToolStripMenuItem3";
-            novoToolStripMenuItem3.Size = new Size(180, 22);
+            novoToolStripMenuItem3.Size = new Size(103, 22);
             novoToolStripMenuItem3.Text = "&Novo";
             novoToolStripMenuItem3.Click += novoToolStripMenuItem3_Click;
             // 
             // listaToolStripMenuItem1
             // 
             listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
-            listaToolStripMenuItem1.Size = new Size(180, 22);
+            listaToolStripMenuItem1.Size = new Size(103, 22);
             listaToolStripMenuItem1.Text = "&Lista";
+            // 
+            // estoqueToolStripMenuItem
+            // 
+            estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
+            estoqueToolStripMenuItem.Size = new Size(180, 22);
+            estoqueToolStripMenuItem.Text = "&Consutlar Estoque";
+            estoqueToolStripMenuItem.Click += estoqueToolStripMenuItem_Click;
             // 
             // operaçãoToolStripMenuItem1
             // 
@@ -232,5 +240,6 @@
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripMenuItem novoToolStripMenuItem3;
         private ToolStripMenuItem listaToolStripMenuItem1;
+        private ToolStripMenuItem estoqueToolStripMenuItem;
     }
 }
